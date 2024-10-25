@@ -1,0 +1,30 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_denoise/30570/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2021-06-21 09:37:22.032 +0200>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2021-06-20 21:21:26.517 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       6A 49 25 F8 92 37 28 F9 52 F4 92 C9 1E B3 75 6A
+       data hash MD5: 2K
+       E2 D4 87 5F D6 D3 E1 F6 5D 9B 6E 44 EE 98 A3 90>)
+(   2,<2023-10-28 21:48:30.192 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <convdta from       570 "QY-889" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 1896
+       A9 97 58 F4 B4 F6 43 08 E1 C5 37 B0 BB 0B 75 A4>)
+(   3,<2024-01-11 09:45:40.270 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 10570 "python_denoise" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 1896
+       A9 97 58 F4 B4 F6 43 08 E1 C5 37 B0 BB 0B 75 A4>)
+(   4,<2024-01-22 10:11:56.235 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 20570 "python_denoise" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 1896
+       A9 97 58 F4 B4 F6 43 08 E1 C5 37 B0 BB 0B 75 A4>)
+##END=
+
+$$ hash MD5
+$$ E7 5F BA 1C 87 28 15 9B 04 AC 74 0A 60 A2 C7 87

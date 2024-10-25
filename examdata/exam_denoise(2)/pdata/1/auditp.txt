@@ -1,0 +1,287 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/lenka_alginate/1012/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2023-12-15 18:21:08.702 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 STSR to 0>)
+(   2,<2023-12-15 18:21:09.550 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 STSI to 0>)
+(   3,<2023-12-15 18:21:11.652 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 2048>)
+(   4,<2023-12-15 18:21:16.241 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 2K SI = 32K 
+       data hash MD5: 32K
+       D2 5C 58 DD C6 42 3B C8 D3 74 03 6D C1 1C DC 94>)
+(   5,<2023-12-15 18:21:21.987 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       2A 14 0F 7B 3B 67 0C 4F 0E F3 55 3C 49 2F CC A2>)
+(   6,<2023-12-15 18:35:14.210 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 3072>)
+(   7,<2023-12-15 18:46:33.050 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 1024>)
+(   8,<2023-12-15 18:47:05.735 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 1K SI = 32K 
+       data hash MD5: 32K
+       BC 87 1E 55 33 06 FF 14 F3 C0 1B E0 76 9D 52 12>)
+(   9,<2023-12-15 18:47:07.998 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       C0 97 67 EB 80 DA 65 2C 5B E3 0B 00 3E F9 9A B6>)
+(  10,<2023-12-15 18:48:45.537 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 3072>)
+(  11,<2023-12-15 18:48:48.481 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 3K SI = 32K 
+       data hash MD5: 32K
+       E3 72 5B A9 81 FD D1 A0 86 22 A0 49 AD 81 35 17>)
+(  12,<2023-12-15 18:48:51.102 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       5A BD D3 EB 73 90 ED 5A 04 9A 82 79 B0 FE 51 7C>)
+(  13,<2023-12-15 18:49:58.416 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 512>)
+(  14,<2023-12-15 18:51:58.681 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 512 SI = 32K 
+       data hash MD5: 32K
+       18 74 A1 D0 D4 C4 E7 16 FD 01 C1 68 DA 16 FF 5B>)
+(  15,<2023-12-15 18:52:00.708 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       B3 BF 97 BF 4D E3 2E 44 D9 FF E9 DF 8C 0B 88 E1>)
+(  16,<2023-12-15 18:52:54.062 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 4096>)
+(  17,<2023-12-15 18:52:59.369 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 4K SI = 32K 
+       data hash MD5: 32K
+       D7 33 17 AE BE FA E4 45 78 50 51 7F 3F FA 92 3D>)
+(  18,<2023-12-15 18:53:02.106 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       04 A5 A9 06 11 12 DA 71 27 4D 2D B7 66 7F 2D 8A>)
+(  19,<2023-12-15 18:58:46.593 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 6144>)
+(  20,<2023-12-15 18:58:50.919 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 6K SI = 32K 
+       data hash MD5: 32K
+       BE F0 A3 0D B0 61 60 54 13 D4 C4 93 75 EA C9 B2>)
+(  21,<2023-12-15 18:58:53.716 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  22,<2023-12-15 19:07:09.115 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 8192>)
+(  23,<2023-12-15 19:07:23.450 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 8K SI = 32K 
+       data hash MD5: 32K
+       9D B0 DA DD 54 62 DA F5 C4 4E 8F 33 8D FA C5 12>)
+(  24,<2023-12-15 19:07:27.936 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       7F 5E FB C9 9F FD F2 E9 01 18 67 0E D8 8E 44 4E>)
+(  25,<2023-12-20 10:42:33.358 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 16384>)
+(  26,<2023-12-20 10:46:32.377 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 8192>)
+(  27,<2023-12-20 10:48:33.783 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 1024>)
+(  28,<2023-12-20 11:16:37.808 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 256>)
+(  29,<2023-12-20 11:20:38.221 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 6144>)
+(  30,<2023-12-20 11:20:42.920 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 6K SI = 32K 
+       data hash MD5: 32K
+       BE F0 A3 0D B0 61 60 54 13 D4 C4 93 75 EA C9 B2>)
+(  31,<2023-12-20 11:20:45.777 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  32,<2023-12-20 12:05:52.127 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 6K SI = 32K 
+       data hash MD5: 32K
+       BE F0 A3 0D B0 61 60 54 13 D4 C4 93 75 EA C9 B2>)
+(  33,<2023-12-20 12:06:38.639 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Unknown data manipulation detected
+       abs n ABSG = 5 
+       data hash MD5: 32K
+       8C 2C C4 6F 30 1C A9 22 9B F3 B0 59 77 16 5B 5F>)
+(  34,<2023-12-20 12:07:11.023 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 4096>)
+(  35,<2023-12-20 12:07:16.743 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 4K SI = 32K 
+       data hash MD5: 32K
+       D7 33 17 AE BE FA E4 45 78 50 51 7F 3F FA 92 3D>)
+(  36,<2023-12-20 12:07:18.932 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       04 A5 A9 06 11 12 DA 71 27 4D 2D B7 66 7F 2D 8A>)
+(  37,<2023-12-20 12:07:48.453 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 4K SI = 32K 
+       data hash MD5: 32K
+       D7 33 17 AE BE FA E4 45 78 50 51 7F 3F FA 92 3D>)
+(  38,<2023-12-20 14:14:44.210 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 6144>)
+(  39,<2023-12-20 14:14:50.947 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 7168>)
+(  40,<2023-12-20 14:15:17.507 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 7K SI = 32K 
+       data hash MD5: 32K
+       DF 42 3E EA C6 CB F1 1D DD 50 17 99 A3 31 BE C7>)
+(  41,<2023-12-20 14:15:19.761 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       57 42 C8 07 0A 16 D0 DF 93 7C 30 D5 4C 8C A3 3B>)
+(  42,<2023-12-20 14:21:32.980 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 16384>)
+(  43,<2023-12-20 14:21:40.763 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 16K SI = 32K 
+       data hash MD5: 32K
+       D7 7C 7F 7C 8E 27 76 49 BD E1 53 C9 7F 38 1A DF>)
+(  44,<2023-12-20 14:21:43.035 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       2E 2A D9 FF CF 6B 63 94 FA 25 91 B4 A6 87 ED 86>)
+(  45,<2023-12-20 14:27:25.585 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 14336>)
+(  46,<2023-12-20 14:27:32.470 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 12288>)
+(  47,<2023-12-20 14:27:37.952 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 12K SI = 32K 
+       data hash MD5: 32K
+       44 A7 D0 FC 21 96 AB 44 13 31 47 F9 6E 9B D8 9D>)
+(  48,<2023-12-20 14:27:40.880 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       87 9D D4 A1 5E 06 1F 89 FB 6B AF 03 17 0D B6 47>)
+(  49,<2023-12-20 14:30:18.725 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 10240>)
+(  50,<2023-12-20 14:30:23.020 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 10K SI = 32K 
+       data hash MD5: 32K
+       97 EC 45 7D 82 3D 1E BA C1 B2 D7 2C 63 79 04 A0>)
+(  51,<2023-12-20 14:30:25.044 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       32 50 82 EF 8B 19 07 4B A9 F6 25 B1 1D 94 D9 59>)
+(  52,<2023-12-20 14:47:28.928 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 1024>)
+(  53,<2023-12-20 14:48:16.868 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 1K SI = 32K 
+       data hash MD5: 32K
+       BC 87 1E 55 33 06 FF 14 F3 C0 1B E0 76 9D 52 12>)
+(  54,<2023-12-20 14:48:20.799 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       C0 97 67 EB 80 DA 65 2C 5B E3 0B 00 3E F9 9A B6>)
+(  55,<2023-12-20 14:49:29.096 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 6144>)
+(  56,<2023-12-20 14:49:33.758 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 6K SI = 32K 
+       data hash MD5: 32K
+       BE F0 A3 0D B0 61 60 54 13 D4 C4 93 75 EA C9 B2>)
+(  57,<2023-12-20 14:49:37.807 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs ABSG = 5 
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  58,<2023-12-20 14:49:47.912 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [176.958;174.599]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  59,<2023-12-20 14:49:47.914 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [102.360;98.978]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  60,<2023-12-20 14:49:47.915 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [80.846;79.337]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  61,<2023-12-20 14:49:47.918 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [78.737;74.665]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  62,<2023-12-20 14:49:47.920 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [72.822;72.223]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  63,<2023-12-20 14:49:47.943 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [72.216;68.143]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  64,<2023-12-20 14:49:47.945 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [67.779;66.339]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  65,<2023-12-20 14:49:47.947 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [65.307;64.132]
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  66,<2023-12-20 15:20:38.857 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 6K SI = 32K 
+       data hash MD5: 32K
+       BE F0 A3 0D B0 61 60 54 13 D4 C4 93 75 EA C9 B2>)
+(  67,<2023-12-20 16:09:01.540 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 6K SI = 32K 
+       data hash MD5: 32K
+       BE F0 A3 0D B0 61 60 54 13 D4 C4 93 75 EA C9 B2>)
+(  68,<2023-12-20 16:09:04.479 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 32K
+       F1 04 9D 0F 2E 18 B9 C9 62 3E E9 66 58 58 D1 63>)
+(  69,<2023-12-20 16:32:01.189 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 7168>)
+(  70,<2023-12-20 16:32:06.067 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 7K SI = 32K 
+       data hash MD5: 32K
+       DF 42 3E EA C6 CB F1 1D DD 50 17 99 A3 31 BE C7>)
+(  71,<2023-12-20 16:51:48.980 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 7K SI = 32K 
+       data hash MD5: 32K
+       DF 42 3E EA C6 CB F1 1D DD 50 17 99 A3 31 BE C7>)
+(  72,<2023-12-20 17:04:23.102 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 8192>)
+(  73,<2023-12-20 17:04:27.279 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 8K SI = 32K 
+       data hash MD5: 32K
+       9D B0 DA DD 54 62 DA F5 C4 4E 8F 33 8D FA C5 12>)
+(  74,<2023-12-20 18:33:30.801 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 10240>)
+(  75,<2023-12-20 18:38:27.483 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 10K SI = 32K 
+       data hash MD5: 32K
+       97 EC 45 7D 82 3D 1E BA C1 B2 D7 2C 63 79 04 A0>)
+(  76,<2023-12-20 18:49:50.305 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 8192>)
+(  77,<2023-12-20 18:49:56.908 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = -202.2174 PHC1 = -119.6 TDeff = 8K SI = 32K 
+       data hash MD5: 32K
+       9D B0 DA DD 54 62 DA F5 C4 4E 8F 33 8D FA C5 12>)
+##END=
+
+$$ hash MD5
+$$ 69 49 0F 0E 31 A1 2D 6B F7 F3 0C D3 C9 60 E5 AA

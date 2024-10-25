@@ -1,0 +1,5 @@
+   Current data set:
+   NAME =	DN_080322	EXPNO =	100	PROCNO = 1
+   DU   =	/media/opetrov/LaCie/DATA/CUNI/ntc1
+
+   Number   Integrated Region     Integral

@@ -1,0 +1,169 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /nmrdata/data/opetrov/nmr/QY-889/408/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-12-07 11:21:03.611 +0100>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2020-12-07 11:20:24.443 +0100,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       68 12 FA 96 C7 04 A4 9D 60 31 A0 DB B6 0D 67 23
+       data hash MD5: 3684
+       A6 E7 0A A7 39 94 98 33 A6 48 23 B6 A9 66 1F 64>)
+(   2,<2020-12-07 11:32:16.364 +0100>,<opetrov>,<ntc2>,<proc1d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       efp LB = 0 FT_mod = 6 PKNL = 1 PHC0 = 157.6226 PHC1 = -1625.176 SI = 2M 
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(   3,<2020-12-07 13:40:25.043 +0100>,<opetrov>,<ntc2>,<dirdata>,<TOPSPIN 3.2>,
+      <wrpa from 1 100 "PS429_2_1" "/nmrdata/data/opetrov/nmr"
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(   4,<2020-12-07 13:46:47.485 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - paramagneticTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(   5,<2020-12-07 13:46:48.230 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - paramagneticTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(   6,<2020-12-07 14:54:10.373 +0100>,<opetrov>,<ntc2>,<dirdata>,<TOPSPIN 3.1PV>,
+      <wrpa from 1 101 "PS429_2_1" "/nmrdata/data/opetrov/nmr"
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(   7,<2020-12-07 14:54:21.601 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.1PV>,
+      <user comment:
+       TITLE=19F - paramagnetic 73 minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(   8,<2020-12-07 14:54:25.520 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.1PV>,
+      <user comment:
+       TITLE=19F - paramagnetic 72 minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(   9,<2020-12-07 14:54:26.296 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.1PV>,
+      <user comment:
+       TITLE=19F - paramagnetic 72 minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  10,<2020-12-07 15:05:38.468 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.1PV>,
+      <user comment:
+       TITLE=19F - paramagnetic 90 minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  11,<2020-12-07 15:05:38.983 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.1PV>,
+      <user comment:
+       TITLE=19F - paramagnetic 90 minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  12,<2020-12-07 15:41:33.827 +0100>,<opetrov>,<ntc2>,<dirdata>,<TOPSPIN 3.2>,
+      <wrpa from 1 102 "PS429_2_1" "/nmrdata/data/opetrov/nmr"
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  13,<2020-12-07 15:43:01.402 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - paramagnetic ??? minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  14,<2020-12-07 15:43:25.203 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - paramagnetic ??? minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  15,<2020-12-07 18:26:06.177 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - paramagnetic 80 minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  16,<2020-12-07 18:26:06.896 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - paramagnetic 80 minTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  17,<2021-06-20 14:37:24.541 +0200>,<opetrov>,<ntc2>,<dirdata>,<TOPSPIN 3.2>,
+      <wrpa from 1 102 "PS427" "/nmrdata/data/opetrov/nmr"
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  18,<2021-06-20 16:27:16.468 +0200>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F / MAS 20kHz /297 K / shim Ada.masTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  19,<2021-06-20 16:27:32.563 +0200>,<opetrov>,<ntc2>,<dirdata>,<TOPSPIN 3.2>,
+      <wrpa from 1 407 "QY-889" "/nmrdata/data/opetrov/nmr"
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  20,<2021-06-20 16:27:51.306 +0200>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F / MAS 20kHz /297 K / shim Ada.mas
+       more echoesTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  21,<2021-06-20 16:27:54.827 +0200>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F / MAS 20kHz /297 K / shim Ada.mas
+       more echoesTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  22,<2021-06-20 16:28:23.808 +0200>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F / MAS 20kHz /297 K / shim Ada.mas
+       twice as many echoesTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  23,<2021-06-20 16:29:46.966 +0200>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F / MAS 20kHz /297 K / shim Ada.mas
+       double number of echoes as in EXPNO 407TITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  24,<2021-06-20 16:30:40.087 +0200>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F / MAS 20kHz /297 K / shim Ada.mas
+       more echoes (L22) than in EXPNO 407TITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_cpmg_relaxation/408/pdata/1/auditp.txt
+(  25,<2024-09-17 08:45:11.635 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=19F / MAS 20kHz / 297 K 
+       more echoes (L22) than in EXPNO 407TITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  26,<2024-09-17 08:45:14.320 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=19F / MAS 20kHz / 297 K 
+       more echoes (L22) than in EXPNO 407TITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  27,<2024-09-17 08:45:15.985 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=19F / MAS 20kHz / 297 K 
+       more echoes (L22) than in EXPNO 407TITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  28,<2024-09-17 08:45:17.407 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=19F / MAS 20kHz / 297 K 
+       more echoes (L22) than in EXPNO 407TITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  29,<2024-09-17 08:45:18.304 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=19F / MAS 20kHz / 297 K 
+       more echoes (L22) than in EXPNO 407TITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+(  30,<2024-09-17 09:16:07.455 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=19F / MAS 20kHz / 297 KTITLE_END
+       data hash MD5: 2M
+       22 0D B1 C2 49 1B C0 53 E6 FA 6A 16 F7 AF 44 B6>)
+##END=
+
+$$ hash MD5
+$$ 77 1B 82 A5 EF B0 91 26 3D 6C 65 AB DD 52 7B 57

@@ -1,0 +1,103 @@
+; op_qcmpg
+; modified version of qcpmg program by Stefan Steuernagel
+;
+; How this is is different to qcpmg:
+; 1) sets number of echoes explicitly, not according to aq
+; 2) acquires a whole echo after 1st 180deg pulse, not a fid
+; 3) sets same phase for 1st 180deg as for the rest of 180s
+; 4) leaves zeros between successive echoes for easy splitting
+;
+; modified by Oleg Petrov, 8 Mar 2024
+; checked on Avance III / TS3
+;
+; comments to original program by Stefan Steuernagel:
+; qcpmgaq (TopSpin 3.0)
+;
+; TS3 / 10.08.2011
+;
+; checked by SEWE 10.08.2011
+; Avance III version
+; written by Stefan Steuernagel
+; pulse program for quadrupolar CPMG sequence
+; samples continuously, including ALL pulses and ringdown delays
+; may be used with digmod digital
+; calculates number of echos according to aq
+;
+;
+;parameters:
+;pl1 : =0W - not used
+;pl21 : RF power level
+;p3 : 90 degree pulse
+;p4 : 180 degree pulse
+;p9 : time to allow pulse ringdown, entered as pulse to make it useconds 10 to 100 us
+;ns : 16 * n
+;d1 : recycle delay
+;d6 : enter expected rise/fall time of half echo
+;l22 : # of echos to be acquired
+;cnst1 : set td to number of acquired complex data points
+;cnst31 : MAS frequency  if ZGOPTNS= -Drot
+;ZGOPTNS : -Drot for MAS synchronization
+;
+;
+;$CLASS=Solids
+;$DIM=1D
+;$TYPE=half integer quadrupoles
+;$SUBTYPE=simple 1D
+;$COMMENT=QCPMG sequence, synchronised to spinning frequency
+
+
+#include <Avancesolids.incl>
+
+define delay echo1
+define delay echo2
+define delay dead
+define delay data 
+
+"p4=p3*2"
+"dead=dw*4"
+#ifdef rot
+"d31=1s/cnst31"
+"l3=(d6+dead+p4/2)/d31 +0.5"
+"echo1=l3*d31-p3/2-p4/2"
+"echo2=l3*d31-p4/2"
+#else 
+"echo1=d6"
+"echo2=d6+dead"
+#endif  
+"data=echo2-dead"
+"cnst1=((data*2+dead*2+p4)*(l22+1))/dw"
+
+1 ze
+2 d1
+  STARTADC
+  RESETPHASE
+  1u RG_OFF
+  (p3 pl21 ph1):f1
+  echo1
+  0.025u
+  (p4 ph3):f1
+  dead
+  0.025u DWL_CLK_ON
+3 data RG_ON
+  data
+  dead RG_OFF
+  (p4 ph3):f1  
+  dead
+  lo to 3 times l22
+  data RG_ON
+  data 
+  1u RG_OFF
+  1u DWL_CLK_OFF
+  rcyc=2
+  10m wr #0
+exit
+
+ph0=0
+ph1=0 1 2 3
+;ph2=1 0 1 0 3 2 3 2 1 0 1 0 3 2 3 
+ph3=1 0 1 0 3 2 3 2 3 2 3 2 1 0 1 0
+ph30=0
+ph31=2 3 0 1
+
+;$Id: qcpmg,v 1.2.18.3 2012/10/09 09:20:43 ber Exp $
+

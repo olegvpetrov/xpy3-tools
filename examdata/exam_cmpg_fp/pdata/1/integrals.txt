@@ -1,0 +1,5 @@
+   Current data set:
+   NAME =	python_cpmg_fp	EXPNO =	3000	PROCNO = 1
+   DU   =	/media/opetrov/LaCie/DATA/CUNI/ntc2
+
+   Number   Integrated Region     Integral

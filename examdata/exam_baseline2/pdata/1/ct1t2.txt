@@ -1,0 +1,41 @@
+Dataset :
+ /nmrdata/data/opetrov/nmr/JDSO121(2)_methane_Teflon/414/pdata/1
+AREA fit :
+ I[t]=I[0]+P*exp(-t/T1)
+
+24 points for Integral 1,  Integral Region from 5.032 to -0.145 ppm
+Results     Comp. 1    
+
+I[0]  =    8.939e-01
+P     =   -1.531e+00
+T1    =     362.266m
+SD    =    6.698e-02
+
+    tau    ppm     integral    intensity
+
+    2.000m     2.974  -5.2316e+10     eliminated
+    2.939m     2.974  -5.1429e+10     eliminated
+    4.319m     2.974  -5.1063e+10     eliminated
+    6.347m     2.992  -4.9935e+10  -1.4936e+08
+    9.327m     2.974  -4.7542e+10     eliminated
+   13.706m     2.974  -4.5197e+10     eliminated
+   20.142m     2.989   -4.175e+10  -6.5545e+07
+   29.599m     2.974  -3.7518e+10  -2.2074e+07
+   43.497m     2.974  -3.1796e+10     eliminated
+   63.920m     2.974  -2.5329e+10     eliminated
+   93.932m     2.991  -1.6606e+10   1.6746e+08
+  138.035m     2.992  -4.7847e+09   2.2356e+08
+  202.847m     2.974   6.9864e+09     eliminated
+  298.089m     2.974   1.8267e+10     eliminated
+  438.051m     2.974   2.9797e+10     eliminated
+  643.728m     2.974   4.1805e+10     eliminated
+  945.978m     2.974   4.9538e+10     eliminated
+    1.390s     2.974   5.6746e+10     eliminated
+    2.043s     2.974   6.2584e+10     eliminated
+    3.002s     2.988    6.775e+10   2.8868e+08
+    4.412s     2.992   7.1366e+10   2.9778e+08
+    6.483s     2.985    7.362e+10   2.9504e+08
+    9.527s     2.978   7.5253e+10   2.9739e+08
+   14.000s     2.974   7.6229e+10   3.0251e+08
+
+

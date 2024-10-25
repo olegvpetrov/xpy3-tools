@@ -1,0 +1,18 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /nmrdata/data/opetrov/nmr/gel-MOD-70 F3A/101/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2022-06-24 12:16:34.012 +0200>,<opetrov>,<ntc1>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2022-06-24 12:10:54.217 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       C2 5F 1B AF CD DF C0 46 4E 82 D8 78 AC 09 48 91
+       data hash MD5: 22744
+       0F 94 DA 39 2C 1A DC 59 A1 37 47 07 CB 50 CB 80>)
+##END=
+
+$$ hash MD5
+$$ D8 59 F2 BC B7 68 5F F7 E6 0D BE AD D0 86 23 41

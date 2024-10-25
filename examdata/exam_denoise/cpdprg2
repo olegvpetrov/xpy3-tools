@@ -1,0 +1,12 @@
+;$OWNER=BRUKER
+  0.3u fq=cnst21
+  0.3u pl=pl13
+1 47up:0 
+	p23:90
+	47up:0
+	47up:180
+	p23:90
+	47up:180	
+	jump to 1
+;timing have to be "TIMEup = (0.98/MAS speed) - (p23/2)", p23 = 2*p3, p3 = 2us.
+;Chem phys lett 635(2015)339-344

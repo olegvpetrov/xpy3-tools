@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 3	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2024-07-02 13:44:55.099 +0200  opetrov@ntc1
+$$ /nmrdata/data/opetrov/nmr/DN_080322/102/pdata/1/assocs
+$$ process /opt/topspin3.2/prog/mod/dataserver
+##$MULTDISP= </nmrdata/data/opetrov/nmr/DN_080322/1006/pdata/1>
+##END=

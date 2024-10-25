@@ -1,0 +1,69 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /nmrdata/data/opetrov/nmr/CP-814E/1/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2023-02-21 23:17:10.240 +0100>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2023-02-21 18:12:15.183 +0100,
+	POWCHK enabled, PULCHK disabled,
+       terminated by command 'halt'
+       configuration hash MD5:
+       20 4C 01 AE F0 3B 16 05 A9 F2 B4 33 F2 FC 31 AE
+       data hash MD5: 6K
+       E1 2D 73 57 FE E2 32 CA 61 B3 F3 CD 44 C3 0C 7F>)
+(   2,<2023-02-21 23:17:24.953 +0100>,<opetrov>,<ntc2>,<proc1d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       efp LB = 10 FT_mod = 6 PKNL = 1 PHC0 = -369.6392 PHC1 = -902.8 SI = 16K 
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+(   3,<2023-02-21 23:23:53.121 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=CP-814E zeolite, by Mariya Shamzhy
+       27Al / MAS 20kHz / shim MAS2.5mm / 6.4mg / 296KTITLE_END
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_baseline/1001/pdata/1/auditp.txt
+(   4,<2023-11-30 15:21:39.370 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 10 FT_mod = 6 PKNL = 1 PHC0 = -369.6392 PHC1 = -902.8 SI = 16K 
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+(   5,<2023-12-01 17:32:14.105 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 10 FT_mod = 6 PKNL = 1 PHC0 = -369.6392 PHC1 = -902.8 SI = 16K 
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+(   6,<2023-12-01 17:59:36.909 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 10 FT_mod = 6 PKNL = 1 PHC0 = -369.6392 PHC1 = -902.8 SI = 16K 
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+(   7,<2024-09-16 08:23:49.944 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=CP-814E zeolite
+       27Al / MAS 20kHz / shim MAS2.5mm / 6.4mg / 296KTITLE_END
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+(   8,<2024-09-16 08:24:13.109 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=sample CP-814E zeolite
+       27Al / MAS 20kHz / shim MAS2.5mm / 6.4mg / 296KTITLE_END
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+(   9,<2024-09-16 08:24:28.733 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=sample: CP-814E zeolite
+       27Al / MAS 20kHz / shim MAS2.5mm / 6.4mg / 296KTITLE_END
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+(  10,<2024-09-16 09:18:27.039 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 10 FT_mod = 6 PKNL = 1 PHC0 = -369.6392 PHC1 = -902.8 SI = 16K 
+       data hash MD5: 16K
+       A5 B1 78 DF 96 26 41 42 4F 31 22 B9 3C AB 37 1D>)
+##END=
+
+$$ hash MD5
+$$ 52 7D F0 B4 1B 60 11 07 68 DA 33 1F 14 CC 5A CF

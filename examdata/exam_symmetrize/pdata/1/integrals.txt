@@ -1,0 +1,5 @@
+   Current data set:
+   NAME =	JD-SO121	EXPNO =	15	PROCNO = 1
+   DU   =	/media/opetrov/LaCie/DATA/CUNI/ntc2
+
+   Number   Integrated Region     Integral

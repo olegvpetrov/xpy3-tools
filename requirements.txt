@@ -1,0 +1,9 @@
+contourpy
+Cython
+matplotlib
+numpy
+pybaselines
+pyicoshift
+scipy
+vam.whittaker
+

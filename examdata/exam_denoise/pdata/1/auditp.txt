@@ -1,0 +1,106 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_denoise/30570/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2021-06-21 09:37:22.032 +0200>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2021-06-20 21:21:26.517 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       6A 49 25 F8 92 37 28 F9 52 F4 92 C9 1E B3 75 6A
+       data hash MD5: 2K
+       E2 D4 87 5F D6 D3 E1 F6 5D 9B 6E 44 EE 98 A3 90>)
+(   2,<2023-10-28 21:48:30.192 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <convdta from       570 "QY-889" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 1896
+       A9 97 58 F4 B4 F6 43 08 E1 C5 37 B0 BB 0B 75 A4>)
+(   3,<2023-10-28 21:48:41.891 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 31.5148 PHC1 = -12 TDeff = 360 SI = 4K 
+       data hash MD5: 4K
+       2A 93 D0 87 1C 95 66 F7 96 A4 08 EB 44 D4 01 F1>)
+(   4,<2023-10-28 21:48:44.546 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs n ABSG = 5 
+       data hash MD5: 4K
+       39 AD 0A C8 A3 09 7C B8 F8 48 72 47 F1 AF 1A 60>)
+(   5,<2023-10-28 22:05:55.453 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 31.5148 PHC1 = -12 TDeff = 360 SI = 4K 
+       data hash MD5: 4K
+       2A 93 D0 87 1C 95 66 F7 96 A4 08 EB 44 D4 01 F1>)
+(   6,<2023-10-29 09:49:48.802 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 31.5148 PHC1 = -12 TDeff = 360 SI = 4K 
+       data hash MD5: 4K
+       2A 93 D0 87 1C 95 66 F7 96 A4 08 EB 44 D4 01 F1>)
+(   7,<2023-10-29 09:49:56.366 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <pk fgphup PHC0 = 5.710938 PHC1 = 0 
+       data hash MD5: 4K
+       0E 4D 53 B5 DD 0D BD 4C 17 BB F8 36 A2 D1 41 94>)
+(   8,<2023-10-29 09:56:10.688 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 WDW to no>)
+(   9,<2023-10-29 09:56:16.189 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 37.22574 PHC1 = -12 TDeff = 360 SI = 4K 
+       data hash MD5: 4K
+       BC 0F 36 F2 A4 9D 68 54 12 C1 8E 7A 1F F6 79 C3>)
+(  10,<2023-10-29 09:56:37.737 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 SI to 2048>)
+(  11,<2023-10-29 09:56:42.732 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 37.22574 PHC1 = -12 TDeff = 360 SI = 2K 
+       data hash MD5: 2K
+       5F F1 0D 9F 60 72 47 A5 0E A2 6B 0D 11 09 13 F2>)
+(  12,<2023-10-29 09:56:46.028 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 37.22574 PHC1 = -12 TDeff = 360 SI = 2K 
+       data hash MD5: 2K
+       5F F1 0D 9F 60 72 47 A5 0E A2 6B 0D 11 09 13 F2>)
+(  13,<2023-10-29 10:13:27.948 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 1024>)
+(  14,<2023-10-29 10:13:33.127 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 37.22574 PHC1 = -12 TDeff = 1K SI = 2K 
+       data hash MD5: 2K
+       BC C8 97 D1 2C D0 FF BC 57 53 CB F6 2C 16 D4 E3>)
+(  15,<2023-10-29 10:13:49.715 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 0>)
+(  16,<2023-10-29 10:14:00.231 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 37.22574 PHC1 = -12 SI = 2K 
+       data hash MD5: 2K
+       BC 55 43 89 5B B0 CC DC AC E0 5B CB 59 F5 B2 A9>)
+(  17,<2023-10-29 10:14:24.554 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 360>)
+(  18,<2023-10-29 10:14:29.591 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 37.22574 PHC1 = -12 TDeff = 360 SI = 2K 
+       data hash MD5: 2K
+       5F F1 0D 9F 60 72 47 A5 0E A2 6B 0D 11 09 13 F2>)
+(  19,<2023-10-29 10:14:54.886 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <pk fgphup PHC0 = -19.44575 PHC1 = 25.725 
+       data hash MD5: 2K
+       ED 52 68 CB D6 8D FF F9 AD 2B D0 15 F1 1B 43 60>)
+(  20,<2024-01-11 09:45:40.299 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <Unknown data manipulation detected
+       wrpa from 1 10570 "python_denoise" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 2K
+       DE 7D A4 72 DF 46 FF F1 55 CA 7A 21 79 C4 E2 B8>)
+(  21,<2024-01-11 09:45:56.173 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TDeff to 512>)
+(  22,<2024-01-11 09:45:59.353 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 5 FT_mod = 6 PKNL = 1 PHC0 = 17.77999 PHC1 = 13.725 TDeff = 512 SI = 2K 
+       data hash MD5: 2K
+       72 B5 30 38 D5 6E AF A3 EF E0 62 C1 64 FA CA 04>)
+(  23,<2024-01-22 10:11:56.253 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <Unknown data manipulation detected
+       wrpa from 1 20570 "python_denoise" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 2K
+       78 37 17 96 6C FD 76 4C 77 37 21 18 1D 56 3C FD>)
+##END=
+
+$$ hash MD5
+$$ 1F A8 42 AB 02 2D 00 BA 8F D2 2C A6 15 96 72 96

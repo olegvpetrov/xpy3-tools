@@ -1,0 +1,5 @@
+   Current data set:
+   NAME =	JD-SO171	EXPNO =	15	PROCNO = 1
+   DU   =	/nmrdata/data/opetrov/nmr
+
+   Number   Integrated Region     Integral

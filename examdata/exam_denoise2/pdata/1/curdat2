@@ -1,0 +1,23 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 19	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= pavel
+$$ 2024-09-20 17:47:08.332 +0200  opetrov@nt166
+$$ /opt/topspin4.2.0/examdata/exam_CMCse_3/2019/pdata/1/curdat2
+$$ process /opt/topspin4.2.0/prog/mod/dataserver
+##$DATPATH2= </opt/topspin4.2.0/examdata>
+##$DATPATH3= <>
+##$DU2= <>
+##$DU3= <>
+##$EXPNO2= 11
+##$EXPNO3= 0
+##$NAME2= <exam_CMCse_3>
+##$NAME3= <>
+##$PROCNO2= 1
+##$PROCNO3= 0
+##$TYPE= <>
+##$USER2= <>
+##$USER3= <>
+##END=

@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2021-06-20 16:27:32.529 +0200  opetrov@ntc2
+$$ /nmrdata/data/opetrov/nmr/QY-889/408/pdata/1/assocs
+$$ process /opt/topspin3.2/prog/mod/dirdata
+##$MULTDISP= </nmrdata/data/opetrov/nmr/CUNI-105/7/pdata/1>
+##END=

@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TOPSPIN		Version 3.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 2	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2019-01-25 15:05:21.464 +0100  opetrov@ntc2
+$$ /nmrdata/data/opetrov/nmr/JD-SO121/15/pdata/1/assocs
+$$ process /opt/topspin3.2/prog/mod/dataserver
+##$MULTDISP= </nmrdata/data/vasek/nmr/Al2O3-korund-AW24/40/pdata/1>
+##END=

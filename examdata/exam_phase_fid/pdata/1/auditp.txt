@@ -1,0 +1,85 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /nmrdata/data/opetrov/nmr/gel-MOD-70 F3A/101/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2022-06-23 18:47:26.303 +0200>,<opetrov>,<ntc1>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2022-06-23 18:45:38.610 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       C2 5F 1B AF CD DF C0 46 4E 82 D8 78 AC 09 48 91
+       data hash MD5: 11570
+       26 11 C3 82 B5 B5 34 90 65 A7 F2 E3 EA CB 37 3B>)
+(   2,<2022-06-23 18:47:43.079 +0200>,<opetrov>,<ntc1>,<proc1d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       efp BC_mod = 1 LB = 0 FT_mod = 5 PKNL = 1 PHC0 = -203.385 PHC1 = 22.1 SI = 4K 
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(   3,<2022-06-23 19:24:25.338 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F1A / 0.457g / insert D2O / 298KTITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(   4,<2022-06-23 19:47:11.536 +0200>,<opetrov>,<ntc1>,<dirdata>,<TOPSPIN 3.2>,
+      <wrpa from 1 100 "gel-MOD-70 F1A" "/nmrdata/data/opetrov/nmr"
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(   5,<2022-06-23 19:48:03.327 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F1A / 0.457g / insert D2O / 298K
+       lower power ()TITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(   6,<2022-06-23 19:48:30.381 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F1A / 0.457g / insert D2O / 298K
+       lower power (PLW21=24W)TITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(   7,<2022-06-23 19:48:48.389 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F1A / 0.457g / insert D2O / 298K
+       lower pulse powerTITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(   8,<2022-06-24 09:27:39.531 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F1A / 0.457g / insert D2O / 298K
+       lower-power pulsesTITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(   9,<2022-06-24 09:27:40.732 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F1A / 0.457g / insert D2O / 298K
+       lower-power pulsesTITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(  10,<2022-06-24 11:55:58.931 +0200>,<opetrov>,<ntc1>,<dirdata>,<TOPSPIN 3.2>,
+      <wrpa from 1 101 "gel-MOD-70 F1A" "/nmrdata/data/opetrov/nmr"
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(  11,<2022-06-24 11:56:12.861 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F3A / insert D2O / 298K
+       lower-power pulsesTITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(  12,<2022-06-24 11:56:15.929 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F3A / insert D2O / 298K
+       lower-power pulsesTITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+(  13,<2022-06-24 19:09:14.605 +0200>,<opetrov>,<ntc1>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=19F - gel-MOD-70 F3A / insert D2O / 298K
+       lower-power pulses
+       Warning: TD is inconsistent with cnst1TITLE_END
+       data hash MD5: 4K
+       90 AF 78 D9 7F 58 E4 78 03 7A 6D 9B 3B 35 8B 8F>)
+##END=
+
+$$ hash MD5
+$$ C5 C8 F6 31 82 9D 91 11 15 5F 6C 48 32 46 AD 29

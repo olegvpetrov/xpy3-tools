@@ -1,0 +1,23 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/Al(acac)3/1003/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2023-02-21 09:29:03.610 +0100>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2023-02-20 11:53:41.597 +0100,
+	POWCHK enabled, PULCHK disabled,
+       terminated by command 'halt'
+       configuration hash MD5:
+       20 4C 01 AE F0 3B 16 05 A9 F2 B4 33 F2 FC 31 AE
+       data hash MD5: 64K
+       BD DB E2 62 F7 65 1F A5 7F 14 53 B7 BE C6 ED 2A>)
+(   2,<2023-04-10 20:05:22.642 +0200>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1002 "Al(acac)3" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 64K
+       BD DB E2 62 F7 65 1F A5 7F 14 53 B7 BE C6 ED 2A>)
+##END=
+
+$$ hash MD5
+$$ DB 34 DC 9A 28 55 32 CB 7B D9 5E 6A 33 BD E7 FC

@@ -1,0 +1,101 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_baseline2/414/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2019-04-13 16:45:23.404 +0200>,<opetrov>,<ntc1>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2019-04-13 15:57:28.118 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       08 21 4C 75 CC E4 C5 7E 1D AC B1 F4 B5 63 AF 5F
+       data hash MD5: 4K * 24
+       93 A3 92 FB 74 2D E2 FF E3 29 58 6C F8 0D E9 75>)
+(   2,<2019-04-13 17:15:39.837 +0200>,<opetrov>,<ntc1>,<proc2d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -136.6 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       1E 19 4D 66 2C 77 06 A5 2D 00 C4 03 23 25 1A AD>)
+(   3,<2019-04-13 17:16:29.910 +0200>,<opetrov>,<ntc1>,<proc2d>,<TOPSPIN 3.2>,
+      <pk2 fgphup F2: PHC0 = -1.8 PHC1 = 0
+       data hash MD5: 7296 * 32
+       6A E2 E7 0F 2A 8B A9 A9 53 01 8E B1 FC 3A AE 6F>)
+(   4,<2019-04-13 17:16:34.545 +0200>,<opetrov>,<ntc1>,<proc2d>,<TOPSPIN 3.2>,
+      <abs2 F2: ABSG = 5 ABSF1 = 15.23164 ABSF2 = -11.48017
+       data hash MD5: 7296 * 32
+       C9 D6 E1 42 33 BB F1 90 10 39 E0 98 E9 A1 2A A1>)
+(   5,<2019-04-13 17:16:40.609 +0200>,<opetrov>,<ntc1>,<proc2d>,<TOPSPIN 3.2>,
+      <abs2 F2: ABSG = 5 ABSF1 = 15.23164 ABSF2 = -11.48017
+       data hash MD5: 7296 * 32
+       ED F1 7A FC 32 B5 5A 84 49 6F 32 75 F3 41 C6 9C>)
+(   6,<2024-09-16 10:48:33.189 +0200>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 414 "JDSO121(2)_methane_Teflon" "/media/opetrov/LaCie/DATA/CUNI/ntc1"
+       data hash MD5: 7296 * 32
+       ED F1 7A FC 32 B5 5A 84 49 6F 32 75 F3 41 C6 9C>)
+(   7,<2024-09-16 10:49:47.135 +0200>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=1H / JDSO121+methane gas / 2 bar / 368KTITLE_END
+       data hash MD5: 7296 * 32
+       ED F1 7A FC 32 B5 5A 84 49 6F 32 75 F3 41 C6 9C>)
+(   8,<2024-09-16 16:35:23.367 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(   9,<2024-09-16 16:36:59.610 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <abs2 F2: ABSG = 5 ABSF1 = 15.23164 ABSF2 = -11.48017
+       data hash MD5: 7296 * 32
+       45 D9 41 E8 FB 12 40 C6 5D 54 16 A1 E2 55 18 D3>)
+(  10,<2024-09-16 16:38:09.922 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <pk2 F2: PHC0 = -138.4 PHC1 = 0
+       data hash MD5: 7296 * 32
+       F4 CB 32 BC 2D 88 6A 4B EA 8A 37 EB 67 19 AE 51>)
+(  11,<2024-09-16 16:38:15.175 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(  12,<2024-09-16 16:55:39.947 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(  13,<2024-09-16 17:01:38.691 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(  14,<2024-09-16 17:04:43.093 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(  15,<2024-09-16 17:08:35.358 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(  16,<2024-09-16 17:11:24.872 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <abs2 F2: ABSG = 5 ABSF1 = 15.23164 ABSF2 = -11.48017
+       data hash MD5: 7296 * 32
+       DE 22 BC 2B 6B F6 1B 6F A2 E1 35 12 23 03 9A 4F>)
+(  17,<2024-09-16 17:11:59.186 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(  18,<2024-09-16 17:20:50.098 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+(  19,<2024-10-24 10:48:45.143 +0200>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xf2 F2: SI = 8K WDW = 1 LB = 10 FT_mod = 6 PKNL = 1 STSR = 400 STSI = 7200 PHC0 = -138.4 PHC1 = 0 F1: SI = 32 MC2 = 0
+       data hash MD5: 7296 * 32
+       BF 7E 82 C4 CA 7F 19 D2 E2 B6 A0 B4 73 A9 E6 34>)
+##END=
+
+$$ hash MD5
+$$ F6 A4 02 80 77 CF 9F B2 B4 1F F9 AC AB AA D5 2B

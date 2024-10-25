@@ -1,0 +1,54 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /opt/topspin4.2.0/examdata/exam_CMCse_3/2019/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2011-06-06 13:42:02.071 -0400>,<nmrsu>,<AVIII_400>,<go>,<TOPSPIN 3.0>,
+      <created by zg
+	started at 2011-06-04 02:10:57.770 -0400,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       4A F5 58 64 77 E3 9B 5C 52 0A 01 9E 50 7D 9F 7A
+       data hash MD5: 8K * 128
+       99 8D 18 19 EB B0 3B 10 6D F0 FE 91 BA 63 28 39>)
+(   2,<2023-11-24 21:43:29.440 +0100>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xfb F2: SI = 2K WDW = 3 SSB = 2 FT_mod = 6 PKNL = 1 PHC0 = -34.15625 PHC1 = -70.4 F1: SI = 1K ME_mod = 2 NCOEF = 32 WDW = 4 SSB = 3 FT_mod = 4 FCOR = 0.5 PHC0 = 90 PHC1 = -180
+       data hash MD5: 2K * 1K
+       88 B3 E6 22 46 12 EF 41 DC CD D2 65 08 CB 5B 92>)
+(   3,<2023-11-24 21:49:41.504 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 WDW to no>)
+(   4,<2023-11-24 21:49:43.870 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F2 WDW to no>)
+(   5,<2023-11-24 21:49:53.107 +0100>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xfb F2: SI = 2K FT_mod = 6 PKNL = 1 PHC0 = -34.15625 PHC1 = -70.4 F1: SI = 1K ME_mod = 2 NCOEF = 32 FT_mod = 4 FCOR = 0.5 PHC0 = 90 PHC1 = -180
+       data hash MD5: 2K * 1K
+       97 EE C1 57 22 0C 0B 65 49 1F C8 47 58 CA 73 BC>)
+(   6,<2023-11-24 21:50:13.943 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F2 WDW to SINE>)
+(   7,<2023-11-24 21:50:16.886 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 WDW to QSINE>)
+(   8,<2023-11-24 21:50:22.618 +0100>,<opetrov>,<nt166>,<proc2d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       xfb F2: SI = 2K WDW = 3 SSB = 2 FT_mod = 6 PKNL = 1 PHC0 = -34.15625 PHC1 = -70.4 F1: SI = 1K ME_mod = 2 NCOEF = 32 WDW = 4 SSB = 3 FT_mod = 4 FCOR = 0.5 PHC0 = 90 PHC1 = -180
+       data hash MD5: 2K * 1K
+       88 B3 E6 22 46 12 EF 41 DC CD D2 65 08 CB 5B 92>)
+(   9,<2023-11-27 10:39:48.667 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 19 "exam_CMCse_3" "/opt/topspin4.2.0/examdata"
+       data hash MD5: 2K * 1K
+       88 B3 E6 22 46 12 EF 41 DC CD D2 65 08 CB 5B 92>)
+(  10,<2024-01-25 16:00:26.370 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1019 "exam_CMCse_3" "/opt/topspin4.2.0/examdata"
+       data hash MD5: 2K * 1K
+       88 B3 E6 22 46 12 EF 41 DC CD D2 65 08 CB 5B 92>)
+(  11,<2024-01-25 18:02:16.018 +0100>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=original dataTITLE_END
+       data hash MD5: 2K * 1K
+       88 B3 E6 22 46 12 EF 41 DC CD D2 65 08 CB 5B 92>)
+##END=
+
+$$ hash MD5
+$$ 5E 13 A0 76 23 32 AD B7 9E 42 22 13 9E 51 99 62

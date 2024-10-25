@@ -1,0 +1,132 @@
+# 1 "/opt/topspin3.2/exp/stan/nmr/lists/pp/user/cmpg.vojta"
+; testy a upravy, Vojta 2007-03
+; snaha o kompatibilitu s Emilem
+
+; qcpmg (TopSpin 2.0)
+
+; written by Stefan Steuernagel
+; pulse program for quadrupolar CPMG sequence
+; samples continuously, including ALL pulses and ringdown delays
+; may be used with digmod digital
+; important: only runs via SGU in channel 1
+# 12 "/opt/topspin3.2/exp/stan/nmr/lists/pp/user/cmpg.vojta"
+;parameters:
+;ns : 16 * n
+;d1 : recycle delay
+;d3 : time to allow pulse ringdown, 10 to 100 us
+;d6 : enter duration of FID
+;pl1 : =120 dB, not used
+;pl21 : RF power level
+;pl22 : =pl21 usually, =120 dB if 180s are not desired
+;p3 : 90 degree pulse
+;p4 : 180 degree pulse
+;p25 : dummy pulse, not used for acq.
+;l22 : # of echos to be acquired
+;cnst1 : set td to number of acquired complex data points
+
+;$COMMENT=quadrupolar CPMG sequence, samples continuously, pulses blanked out, requires DRU
+;$CLASS=Solids
+;$DIM=1D
+;$TYPE=half integer quadrupoles
+;$SUBTYPE=simple 1D
+;$OWNER=vojta
+# 1 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl" 1
+;Avancesolids.incl
+;   for TCU3
+;
+;version 1 28.2.2001, written by HF
+;	   4.4.2006, complemented by Ste
+
+;$CLASS=Solids INCL
+;$COMMENT=definitions for setrtp and setnmr
+# 10 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl"
+;switch between 1H or 19F output (H amplifier) 
+
+
+# 14 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl"
+;gating pulse for RX, ADC and HPPR auto mode
+
+
+# 18 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl"
+;explicit blanking of preamp, receiver, adc, not implemented yet
+
+
+# 26 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl"
+;generate dwell clock
+
+
+;turn dwell clock on/off
+# 32 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl"
+;
+
+
+# 36 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl"
+;define data sampling for WAHUHA type experiments, samples analogue or digitally for d9, closes receiver
+
+
+# 40 "/opt/topspin3.2/exp/stan/nmr/lists/pp/Avancesolids.incl"
+;explicit transmitter blanking, not supported yet
+
+;NCO switching, to be implemented
+
+;$id: $
+# 32 "/opt/topspin3.2/exp/stan/nmr/lists/pp/user/cmpg.vojta" 2
+# 34 "/opt/topspin3.2/exp/stan/nmr/lists/pp/user/cmpg.vojta"
+define delay del3
+"del3=d3-1u"
+"p4=p3*2"
+;"cnst1=((d6*2+d3*2+p4)*l22+d6+d3)/dw"
+"cnst1=((d6*2+d3*2+p4)*(l22+1))/dw"
+;define delay rest
+;"rest=aq-(cnst1*dw)"
+;"rest=aq-cnst1*dw" ; Vojta
+"p25=1/cnst1"
+;cnst11 : to adjust t=0 for acquisition, if digmod = baseopt
+;"acqt0=1u*cnst11"
+;define delay twotau
+;"twotau=d6*2+d3*2+p4"
+
+# 1 "mc_line 48 file /opt/topspin3.2/exp/stan/nmr/lists/pp/user/cmpg.vojta dc-measurement inserted automatically"
+
+    dccorr
+# 48 "/opt/topspin3.2/exp/stan/nmr/lists/pp/user/cmpg.vojta"
+1 ze
+;  twotau
+2 d1
+  (1u sync 1u adc ph31 syrec)      ;(1u sync 1u adc ph31 syrec)
+  (1u ph30:r):f1 ;(1u ph30:r):f1
+  1u setrtp1^5
+  (p3 pl21 ph1):f1
+  d6
+  d3
+  (p4 pl22 ph3):f1
+  del3
+  1u setrtp1|0
+3 d6 setrtp1|5
+  d6
+  1u setrtp1^5
+  del3
+  (p4 pl22 ph3):f1
+  d3
+  lo to 3 times l22
+  d6 setrtp1|5
+  d6
+  1u setrtp1^5
+  1u setrtp1^0
+;  rest setrtp1^0
+  rcyc=2
+  10m wr #0
+exit
+
+;ph0=0
+;ph1=0 2
+;ph2=1 1 3 3
+;ph3=1 1 1 1 3 3 3 3
+;ph30=0
+;ph31=2 0
+ph0=0
+ph1=0 1 2 3
+ph2=1 0 1 0 3 2 3 2 1 0 1 0 3 2 3 2
+ph3=1 0 1 0 3 2 3 2 3 2 3 2 1 0 1 0
+ph30=0
+ph31=2 3 0 1

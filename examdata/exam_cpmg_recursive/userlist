@@ -1,0 +1,9 @@
+newname  	PbTiO3_h   
+NumExp  	11   
+ExpType   	trigger   
+Koeficient   	2.000000   
+StartTrig  	0.050000  in s 
+StepTrig  	0.100000  in s 
+WobbStep  	12   
+WobbRout   	1 
+SwitchFreq  	1200.000000   in MHz 

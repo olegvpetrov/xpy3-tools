@@ -1,0 +1,25 @@
+
+Report of AU program poptau
+# Start time: 2021-06-18 15:20:08.581 +0200
+
+F1P=179.233ppm F2P=169.660ppm
+PH_mode=1  FT_mod=6
+
+
+PROCNO=999
+
+Linear optimization of PLW 1 in 6 steps, as Step: Group 0
+starting at 30.000000000  endval= 40.000000000 
+OPTIMUM= POSMAX
+VARMOD= LIN
+
+Experiment      PLW 1         Maximum point   Minimum point       Integral
+     1      30.000000000000       320793182       -11255229      10650499.323077
+     2      32.000000000000       319891017       -12694509      10204347.692308
+     3      34.000000000000       318914950       -11737774      10338377.292308
+     4      36.000000000000       313562797       -13492557       9872492.053846
+     5      38.000000000000       320894521        -8994671      10714370.346154
+     6      40.000000000000       308892957       -11913466       9987877.007692
+poptau for PLW 1 finished.
+POSMAX at experiment 5:  PLW 1 = 38.000000  
+

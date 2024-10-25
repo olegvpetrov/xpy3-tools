@@ -1,0 +1,46 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2024-09-16 10:48:33.180 +0200  opetrov@nt166
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_baseline2/414/pdata/1/t1par
+$$ process /opt/topspin4.2.0/prog/mod/dirdata
+##$BIGDEL= 100
+##$CALCDN= yes
+##$COMPNO= 1
+##$CONV= 1e-05
+##$CURSOR= 1
+##$DRIFT= 5
+##$EDGUESS= 0
+##$EDPARM= 0
+##$FCTTYPE= 0
+##$FIDNUMB= 24
+##$FITT1T2= 0
+##$FITTYPE= 1
+##$GAMM= 10000
+##$GRADIEN= 1
+##$GUESSES= (0..23)
+1 1 1 1 1 1 1 1 1 1 1 1 0.1 0.1 0.1 1 1 1 1 1 1 1 1 1
+##$INC= 1
+##$INTRNG= 1
+##$LISTINC= 0.001
+##$LISTTYP= <vdlist>
+##$LITDEL= 10
+##$MAXPNTS= 24
+##$NUMPNTS= 24
+##$NUMTERM= 3
+##$PARM= (0..11)
+0.893885474626108 -1.53064006089872 0.362266178158513 0 0 0 0 0 0 0 0 0
+##$PDTYP= <pd>
+##$REGIONS= 1
+##$SHOWINT= yes
+##$SHOWPP= yes
+##$SHOWTXT= 1
+##$START= 1
+##$X_END= 14
+##$X_START= 0.002
+##$Y_END= 7.622868e+10
+##$Y_START= -5.231612e+10
+##END=

@@ -1,0 +1,24 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2024-01-25 16:00:26.280 +0100  opetrov@nt166
+$$ /opt/topspin4.2.0/examdata/exam_CMCse_3/2019/acqu2
+$$ process /opt/topspin4.2.0/prog/mod/dirdata
+##$ACQT0= 0
+##$BF1= 100.557449
+##$FnILOOP= 0
+##$FnMODE= 5
+##$NUC1= <13C>
+##$NusJSP= 0
+##$NusT2= 0
+##$NusTD= 0
+##$O1= 10055.7449
+##$ProjAngle= 0
+##$SFO1= 100.5675047449
+##$SW= 160.725792886711
+##$SW_h= 16163.7919387622
+##$TD= 128
+##END=

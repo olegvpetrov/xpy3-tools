@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2023-12-15 18:21:02.001 +0100  opetrov@nt166
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/lenka_alginate/1012/pdata/1/outd
+$$ process /opt/topspin4.2.0/prog/mod/proc1d
+##$CURPLOT= <HP>
+##$CURPRIN= <$HP>
+##$DFORMAT= <normdp>
+##$LAYOUT= <+/1D_X.xwp>
+##$LFORMAT= <normlp>
+##$PFORMAT= <normpl>
+##END=

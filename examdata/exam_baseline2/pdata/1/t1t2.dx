@@ -1,0 +1,48 @@
+##TITLE= List of Points
+##JCAMPDX= 5.0
+##DATA TYPE= LINK
+##BLOCKS= 1	$$ is the number of fits or point lists
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2019-04-13 17:26:04.213 +0200  opetrov@ntc1
+$$ /nmrdata/data/opetrov/nmr/JDSO121(2)_methane_Teflon/414/pdata/1/t1t2.dx
+##XUNITS= sec
+##YUNITS= a.u.
+##MINX=   2.000000e-03
+##MAXX=   1.400000e+01
+##MINY=  -6.863049e-01
+##MAXY=   1.000000e+00
+##TITLE= Peak No. 1 at 15.228 ppm, t1/t2, I[0] =  8.939e-01, P = -1.531e+00, T =  362.266m
+##JCAMP-DX= 5.0
+##DATA TYPE= Relaxation Data
+$$
+##$FITFKT= t1/t2(  8.938855e-01,  -1.530640e+00,   3.622662e-01)
+$$
+##NPOINTS= 24
+##XYPOINTS= (XY..XY)
+ 2.000e-03, -6.863049e-01
+ 2.939e-03, -6.746711e-01
+ 4.319e-03, -6.698600e-01
+ 6.347e-03, -6.550630e-01
+ 9.327e-03, -6.236772e-01
+ 1.371e-02, -5.929157e-01
+ 2.014e-02, -5.476878e-01
+ 2.960e-02, -4.921706e-01
+ 4.350e-02, -4.171105e-01
+ 6.392e-02, -3.322714e-01
+ 9.393e-02, -2.178438e-01
+ 1.380e-01, -6.276810e-02
+ 2.028e-01,  9.165057e-02
+ 2.981e-01,  2.396330e-01
+ 4.381e-01,  3.908834e-01
+ 6.437e-01,  5.484091e-01
+ 9.460e-01,  6.498658e-01
+ 1.390e+00,  7.444179e-01
+ 2.043e+00,  8.210076e-01
+ 3.002e+00,  8.887717e-01
+ 4.412e+00,  9.362039e-01
+ 6.483e+00,  9.657810e-01
+ 9.527e+00,  9.872068e-01
+ 1.400e+01,  1.000000e+00
+##END= $$ End of List for Peak No. 1
+##END= $$ End of List of Points

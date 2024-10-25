@@ -1,0 +1,26 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /opt/topspin4.2.0/examdata/exam_CMCse_3/2019/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2011-06-06 13:42:02.071 -0400>,<nmrsu>,<AVIII_400>,<go>,<TOPSPIN 3.0>,
+      <created by zg
+	started at 2011-06-04 02:10:57.770 -0400,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       4A F5 58 64 77 E3 9B 5C 52 0A 01 9E 50 7D 9F 7A
+       data hash MD5: 8K * 128
+       99 8D 18 19 EB B0 3B 10 6D F0 FE 91 BA 63 28 39>)
+(   2,<2023-11-27 10:39:48.592 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 19 "exam_CMCse_3" "/opt/topspin4.2.0/examdata"
+       data hash MD5: 8K * 128
+       99 8D 18 19 EB B0 3B 10 6D F0 FE 91 BA 63 28 39>)
+(   3,<2024-01-25 16:00:26.294 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1019 "exam_CMCse_3" "/opt/topspin4.2.0/examdata"
+       data hash MD5: 8K * 128
+       99 8D 18 19 EB B0 3B 10 6D F0 FE 91 BA 63 28 39>)
+##END=
+
+$$ hash MD5
+$$ 58 5E 7E 51 CA 80 6E 93 75 56 98 3C 3B 94 76 F3

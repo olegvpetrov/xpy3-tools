@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PeakList>
+  <PeakList1D>
+    <PeakList1DHeader creator="maja" date="2017-01-30T15:06:36.150+01:00" expNo="1" name="kalib_grad_bbfo_2017-01-30" owner="" procNo="1" source="/nmrdata/data/maja/nmr">
+      <PeakPickDetails>F1=5.393301ppm, F2=3.932547ppm, MI=50.00cm, MAXI=10000.00cm, PC=4.000
+      </PeakPickDetails>
+    </PeakList1DHeader>
+    <Peak1D F1="4.703734" intensity="1.000000e+02" type="0"/>
+  </PeakList1D>
+</PeakList>

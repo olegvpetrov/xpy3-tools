@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 11	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2024-10-04 18:21:12.704 +0200  opetrov@nt166
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/100/pdata/1/assocs
+$$ process /opt/topspin4.2.0/prog/mod/dataserver
+##$MULTDISP= </media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/101/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/102/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/103/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/104/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/105/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/106/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/107/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/108/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/109/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/110/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/111/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/112/pdata/1|/media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/113/pdata/1>
+##END=

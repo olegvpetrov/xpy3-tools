@@ -1,0 +1,5 @@
+   Current data set:
+   NAME =	testH	EXPNO =	604	PROCNO = 1
+   DU   =	/nmrdata/data/opetrov/nmr
+
+   Number   Integrated Region     Integral

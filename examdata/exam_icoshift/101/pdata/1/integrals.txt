@@ -1,0 +1,5 @@
+   Current data set:
+   NAME =	DN_080322	EXPNO =	101	PROCNO = 1
+   DU   =	/nmrdata/data/opetrov/nmr
+
+   Number   Integrated Region     Integral

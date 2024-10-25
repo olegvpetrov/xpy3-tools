@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2024-09-16 13:27:22.019 +0200  opetrov@nt166
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_cpmg_fp/3001/pdata/1/assocs
+$$ process /opt/topspin4.2.0/prog/mod/dirdata
+##$MULTDISP= </nmrdata/data/opetrov/nmr/QY-1044 cal/3/pdata/1>
+##END=

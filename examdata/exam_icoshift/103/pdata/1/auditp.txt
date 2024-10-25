@@ -1,0 +1,29 @@
+##TITLE= Audit trail, TOPSPIN		Version 3.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /nmrdata/data/opetrov/nmr/DN_080322/103/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2024-06-06 17:04:21.782 +0200>,<opetrov>,<ntc1>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2024-06-06 17:03:43.102 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       D4 47 B3 5D B4 51 4D 77 E4 4E 40 D0 8A BB CD CA
+       data hash MD5: 32K
+       88 D1 74 C6 D5 8F AD 72 4F B6 4A 4F 30 0C 96 5F>)
+(   2,<2024-06-06 17:04:29.879 +0200>,<opetrov>,<ntc1>,<proc1d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       efp LB = 0.3 FT_mod = 6 PKNL = 1 PHC0 = 104.6528 PHC1 = -5.200001 SI = 32K 
+       data hash MD5: 32K
+       8B 97 22 6F 1B 6A 1F AC 21 7A 03 C8 6C 10 63 A2>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc1/DN_080322/103/pdata/1/auditp.txt
+(   3,<2024-10-04 10:50:51.344 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 0.3 FT_mod = 6 PKNL = 1 PHC0 = 104.6528 PHC1 = -5.200001 SI = 32K 
+       data hash MD5: 32K
+       8B 97 22 6F 1B 6A 1F AC 21 7A 03 C8 6C 10 63 A2>)
+##END=
+
+$$ hash MD5
+$$ E8 F3 17 0D 0D EB 5C 85 49 79 A7 16 FE 8C 39 26

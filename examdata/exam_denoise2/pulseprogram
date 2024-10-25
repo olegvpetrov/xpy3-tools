@@ -1,0 +1,144 @@
+# 1 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+;inadph
+;avance-version (10/05/11)
+;2D INADEQUATE
+;phase sensitive
+;
+;phase cycling according to:
+;   M. Bourdonneau & B. Ancian, J. Magn. Reson. 132, 316-327 (1998)
+;
+;$CLASS=HighRes
+;$DIM=2D
+;$TYPE=
+;$SUBTYPE=
+;$COMMENT=
+
+
+# 1 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/Avance.incl" 1
+;Avance3.incl
+;   for AV III
+;
+;avance-version (07/12/14)
+;
+;$CLASS=HighRes Incl
+;$COMMENT=
+# 165 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/Avance.incl"
+;$Id: Avance3.incl,v 1.9 2009/07/02 16:40:43 ber Exp $
+# 16 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph" 2
+
+
+# 19 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+"p2=p1*2"
+"d4=1s/(cnst3*4)"
+"d11=30m"
+
+
+"in0=inf1"
+# 29 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+"d0=in0/2-p1*4/3.1416"
+
+
+# 1 "mc_line 33 file C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph exp. def. part of mc cmd. before ze"
+define delay MCWRK
+define delay MCREST
+define delay d0orig
+"d0orig=d0"
+define loopcounter t1loop
+"t1loop=0"
+define loopcounter ph1loop
+"ph1loop=0"
+define loopcounter ST1CNT
+"ST1CNT = td1/(2)"
+"MCWRK = 0.142857*d1"
+"MCREST = d1 - d1"
+
+    dccorr
+# 33 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+# 33 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+1 ze
+# 1 "mc_line 33 file C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph exp. def. of mc cmd. after ze"
+# 34 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+  d11 pl12:f2 
+  d11 cpd2:f2
+# 1 "mc_line 36 file C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph exp. start label for mc cmd."
+2 MCWRK  * 3
+LBLF1, MCWRK  * 3
+LBLST1, MCWRK
+  MCREST
+# 37 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+3 p1 ph1
+  d4
+  p2 ph2
+  d4
+  p1 ph1
+  d0
+  p1 ph3
+  go=2 ph31
+# 1 "mc_line 45 file C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph exp. mc cmd. in line"
+  MCWRK  wr #0 if #0 zd 
+
+  "ph1loop+=1"
+      "d0=d0orig + t1loop * in0 "
+      "phval1 = (ph1loop % 4) * 45"
+      MCWRK ip1 + phval1
+      "phval2 = (ph1loop % 4) * 45"
+      MCWRK ip2 + phval2
+  lo to LBLF1 times 2
+  MCWRK 
+
+  "t1loop+=1"
+      "d0=d0orig + t1loop * in0 "
+      "phval1 = (ph1loop % 4) * 45"
+      MCWRK ip1 + phval1
+      "phval2 = (ph1loop % 4) * 45"
+      MCWRK ip2 + phval2
+  lo to LBLST1 times ST1CNT
+  MCWRK 
+  "t1loop=0"
+  "ph1loop=0"
+  MCWRK
+# 46 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+  d4 do:f2
+exit
+
+
+ph1=(8) 0 0 4 4 0 0 4 4 2 2 6 6 2 2 6 6
+        4 4 0 0 4 4 0 0 6 6 2 2 6 6 2 2
+ph2=(8) 4 0 0 4 4 0 0 4 6 2 2 6 6 2 2 6
+        0 4 4 0 0 4 4 0 2 6 6 2 2 6 6 2
+ph3=    0 1 2 3 1 0 3 2 2 3 0 1 3 2 1 0
+ph31=   0 3 2 1 3 0 1 2
+# 58 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+;pl1 : f1 channel - power level for pulse (default)
+;pl12: f2 channel - power level for CPD/BB decoupling
+;p1 : f1 channel -  90 degree high power pulse
+;p2 : f1 channel - 180 degree high power pulse
+;d0 : incremented delay (2D)
+;d1 : relaxation delay; 1-5 * T1
+;d4 : 1/(4J(CC))
+;d11: delay for disk I/O                             [30 msec]
+;cnst3: = J(CC)
+;inf1: 1/SW(DQ-X) = DW(X)
+;in0: 1/SW(DQ-X) = DW(X)
+;nd0: 1
+;NS: 32 * n
+;DS: 16
+;td1: number of experiments
+;FnMODE: States-TPPI, TPPI, States or QSEQ
+;cpd2: decoupling according to sequence defined by cpdprg2
+;pcpd2: f2 channel - 90 degree pulse for decoupling sequence
+
+
+                                          ;preprocessor-flags-start
+;LABEL_D0: if calculation of d0 leads to negative values use
+;             option -DLABEL_D0 (eda: ZGOPTNS) to start with d0=3u
+                                          ;preprocessor-flags-end
+# 84 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+;Processing (only if option LABEL_D0 not used)
+
+;PHC0(F1): 90
+;PHC1(F1): -180
+;FCOR(F1): 1
+
+# 92 "C:/Bruker/TopSpin3.0_PL3/exp/stan/nmr/lists/pp/inadph"
+;$Id: inadph,v 1.7.2.3 2010/07/23 13:17:44 ber Exp $

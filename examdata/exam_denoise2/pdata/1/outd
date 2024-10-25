@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2024-01-25 16:00:26.333 +0100  opetrov@nt166
+$$ /opt/topspin4.2.0/examdata/exam_CMCse_3/2019/pdata/1/outd
+$$ process /opt/topspin4.2.0/prog/mod/dirdata
+##$CURPLOT= <Phaser 7700DN>
+##$CURPRIN= <$Phaser 7700DN>
+##$DFORMAT= <normdp>
+##$LAYOUT= <+/2d_inv_prog.xwp>
+##$LFORMAT= <normlp>
+##$PFORMAT= <normpl>
+##END=

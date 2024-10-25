@@ -1,0 +1,3 @@
+TITLE=19F - gel-MOD-70 F3A / insert D2O / 298K
+lower-power pulses
+Warning: TD is inconsistent with cnst1TITLE_END

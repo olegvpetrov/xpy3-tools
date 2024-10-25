@@ -1,0 +1,39 @@
+
+Current Data Parameters
+NAME           JD-SO121              
+EXPNO                15              
+PROCNO                1              
+
+F2 - Acquisition Parameters
+Date_          20190125              
+Time              14.47              
+INSTRUM           spect              
+PROBHD   2.5 mm MAS BB/              
+PULPROG        onepulse              
+TD                16384              
+SOLVENT    H2O+D2O_salt              
+NS                70281              
+DS                    0              
+SWH         1250000.000 Hz           
+FIDRES        76.293945 Hz           
+AQ            0.0065536 sec          
+RG                  128              
+DW                0.400 usec         
+DE                 4.67 usec         
+TE                298.0 K            
+D1           1.00000000 sec          
+
+======== CHANNEL f1 ========
+SFO1        130.4054400 MHz          
+NUC1               27Al              
+P1                 0.26 usec         
+PLW1       180.00000000 W            
+
+F2 - Processing parameters
+SI                32768              
+SF          130.4019285 MHz          
+WDW                  EM              
+SSB      0              
+LB               100.00 Hz           
+GB       0              
+PC                 1.00              

@@ -1,0 +1,90 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/Al(acac)3/1003/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2023-02-21 09:29:03.610 +0100>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2023-02-20 11:53:41.597 +0100,
+	POWCHK enabled, PULCHK disabled,
+       terminated by command 'halt'
+       configuration hash MD5:
+       20 4C 01 AE F0 3B 16 05 A9 F2 B4 33 F2 FC 31 AE
+       data hash MD5: 64K
+       BD DB E2 62 F7 65 1F A5 7F 14 53 B7 BE C6 ED 2A>)
+(   2,<2023-02-21 09:29:19.581 +0100>,<opetrov>,<ntc2>,<proc1d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       efp LB = 0 FT_mod = 6 PKNL = 1 PHC0 = 258.9848 PHC1 = -2134.8 SI = 128K 
+       data hash MD5: 128K
+       19 CF B5 95 CA F3 31 84 68 5C 49 69 FE 7A 64 D7>)
+(   3,<2023-02-21 09:30:02.388 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=Aluminium acetylacetonate / 20 kHz / 296 K / shim Ada.mas
+       two years laterTITLE_END
+       data hash MD5: 128K
+       19 CF B5 95 CA F3 31 84 68 5C 49 69 FE 7A 64 D7>)
+(   4,<2023-02-21 09:30:02.902 +0100>,<opetrov>,<ntc2>,<audit>,<TOPSPIN 3.2>,
+      <user comment:
+       TITLE=Aluminium acetylacetonate / 20 kHz / 296 K / shim Ada.mas
+       two years laterTITLE_END
+       data hash MD5: 128K
+       19 CF B5 95 CA F3 31 84 68 5C 49 69 FE 7A 64 D7>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/Al(acac)3/1002/pdata/1/auditp.txt
+(   5,<2023-04-09 20:05:01.789 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 LB to 0.20>)
+(   6,<2023-04-09 20:05:13.108 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 0.2 FT_mod = 6 PKNL = 1 PHC0 = 258.9848 PHC1 = -2134.8 SI = 128K 
+       data hash MD5: 128K
+       17 F6 35 6A 6A 45 92 5E D8 EE 55 5B 64 A9 FD 6B>)
+(   7,<2023-04-09 20:05:19.485 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 LB to 10.00>)
+(   8,<2023-04-09 20:05:24.046 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 10 FT_mod = 6 PKNL = 1 PHC0 = 258.9848 PHC1 = -2134.8 SI = 128K 
+       data hash MD5: 128K
+       6C 08 B7 A7 59 B8 DF E7 BB 57 41 58 C1 55 14 65>)
+(   9,<2023-04-10 20:05:22.692 +0200>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1002 "Al(acac)3" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 128K
+       6C 08 B7 A7 59 B8 DF E7 BB 57 41 58 C1 55 14 65>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/Al(acac)3/1003/pdata/1/auditp.txt
+(  10,<2023-04-11 17:47:22.931 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Unknown data manipulation detected
+       abs n ABSG = 1 
+       data hash MD5: 128K
+       33 31 7E EC 00 EB BE C9 8C CE 7D 57 FA 2C C1 8E>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_rotsync/1003/pdata/1/auditp.txt
+(  11,<2023-11-29 12:24:46.347 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs ABSG = 1 
+       data hash MD5: 128K
+       B1 72 2F 98 78 9A 1B 18 24 BD 7F 3B F2 55 CA A0>)
+(  12,<2023-11-30 16:22:35.264 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs ABSG = 1 
+       data hash MD5: 128K
+       10 C9 3E B2 B6 11 71 D2 14 37 4C 09 EC A1 49 36>)
+(  13,<2024-10-07 09:43:49.261 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs ABSG = 1 
+       data hash MD5: 128K
+       B0 20 D1 2B 16 B0 BE 88 31 36 FA F2 D9 00 34 F7>)
+(  14,<2024-10-07 09:52:19.891 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <pk fgphup PHC0 = -0.6984375 PHC1 = 0 
+       data hash MD5: 128K
+       4B 60 FA F0 C5 C7 56 0E 67 FA 40 61 CF 1E 02 AB>)
+(  15,<2024-10-07 10:00:49.211 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs ABSG = 1 
+       data hash MD5: 128K
+       A2 48 B6 2E B7 76 AA D1 9E 44 74 B4 33 9E 13 5B>)
+(  16,<2024-10-07 10:21:07.776 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs ABSG = 1 
+       data hash MD5: 128K
+       9C 0C 68 68 65 BA A2 99 45 01 5D 5D 06 B4 F1 62>)
+(  17,<2024-10-07 11:45:44.687 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <abs ABSG = 1 
+       data hash MD5: 128K
+       42 6B 93 5C DE 10 DB 8D 84 4C 96 79 38 3A D9 88>)
+##END=
+
+$$ hash MD5
+$$ 22 74 A2 26 C5 18 4C 2E 5F 3D 46 82 E9 3D 5B 26
