@@ -2,7 +2,11 @@
 Contains common utility functions and classes.
 
 written by Oleg Petrov (oleg.petrov@matfyz.cuni.cz)
-version of August 17, 2023
+first version on August 17, 2023
+
+last modification on December 13, 2024:
+ -- added a level_sign property in CountourPlot
+ -- bug fixes
 
 '''
 import brukerIO
@@ -25,20 +29,20 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolb
 from pathlib import Path
 
 class ContourPlot():
-    ''' 2D display with some basic options: zoom, scale, add, etc. '''
+    ''' 2D spectrum display with basic options: zoom, scale, add, ... '''
 
     figsize = (8.0, 8.0)   
     palette = [['#0000FF', '#008080'], ['#ED1C24', '#B2009A'],
-               ['#736900', '#80331A'], ['#008000', '#334D00']]
-                        
+               ['#736900', '#80331A'], ['#008000', '#334D00']]          
     
-    def __init__(self, ds:NMRDataSet):
+    def __init__(self, ds:NMRDataSet, level_sign=0):
         self.root = tk.Tk() 
         self.attr = NMRDataSetAttributes(ds) 
         self.root.title(self.attr.get_ts_title())   
  
         self.data = [] # data store (cache), for faster redrawing
         self.add_data(ds)
+        self.level_sign = level_sign # 0: positive & negative, 1: positive, -1: negative
               
         self.renderer = MplRenderer(figsize=self.figsize, show_frame=False)
         gs = gridspec.GridSpec(2, 2, figure=self.renderer._fig, width_ratios=(1,9), 
@@ -91,10 +95,10 @@ class ContourPlot():
         self.bg_z = self.canvas.copy_from_bbox(self.ax_z.bbox)
 
         # plot contour lines and 1D projections
-        self.contour(x, y, z)  
+        self.contour(x, y, z, level_sign=self.level_sign)  
         self.ax_x.plot(x, np.max(z, axis=0)/zmax, 'b', lw=0.75)
         self.ax_y.plot(np.max(z, axis=1)/zmax, y, 'b', lw=0.75) 
-        
+
         # create widgets
         canvas_widget = self.canvas.get_tk_widget()     
         self.ctrl1 = tk.Frame()
@@ -134,11 +138,12 @@ class ContourPlot():
         self.ctrl1.pack(side='bottom', anchor='w')
         canvas_widget.pack(fill='both', expand=True)
                
+#        self.root.bind("<Configure>", self.on_resize)  
         self.root.resizable(0, 0)      
-        self.root.mainloop()
+        self.root.mainloop()       
                       
     def add_plot_dialog(self, **kwargs):
-        ''' Specify a new dataset to plot (either 2D or 1D)'''
+        ''' Specify a new dataset for either 2D or 1D plotting'''
         self.top = tk.Toplevel(self.root)
         self.top.geometry("360x150")
         self.top.title('Add Spectrum')
@@ -172,7 +177,7 @@ class ContourPlot():
         self.top.wait_window()
         
     def add_data(self, ds:NMRDataSet):
-        ''' Append xyz values and clevels from dataset to cache '''
+        ''' Append xyz values and clevels from dataset to data store (cache) '''
         v = ds.getSpecDataMatrix()
         rng = v['physicalRanges']
         data = {}
@@ -182,18 +187,23 @@ class ContourPlot():
         data['lvls'] = np.array(re.split("[|]", ds.getPar('LEVELSPAR LEVELS')), dtype='float')                      
         self.data.append(data)        
             
-    def contour(self, x, y, z, levels=None, color_num=0):
+    def contour(self, x, y, z, levels=None, level_sign=0, level_color=0):
         ''' Generate contour lines and pass 'em to the renderer.'''
+        print(level_sign)
         if levels is None: 
             levels = self.data[0]['lvls']
+        if level_sign == 1:
+            levels = levels[levels > 0]
+        elif level_sign == -1:
+            levels = levels[levels < 0]    
         cl = levels * 2**self.scale.get()
 
         colors = []
         for l in cl:
             if l > 0.: 
-                colors.append(self.palette[color_num][0])
+                colors.append(self.palette[level_color][0])
             else:
-                colors.append(self.palette[color_num][1])
+                colors.append(self.palette[level_color][1])
 
         # configure contour generator
         cont_gen = contour_generator(x=x, y=y, z=z, 
@@ -221,7 +231,7 @@ class ContourPlot():
         for coll in self.ax_z.collections: 
             coll.remove() 
         for i, data in enumerate(self.data):
-            self.contour(data['x'], data['y'], data['z'], data['lvls'], color_num=i)            
+            self.contour(data['x'], data['y'], data['z'], data['lvls'], level_sign=self.level_sign, level_color=i)            
         for coll in self.ax_z.collections: 
             self.ax_z.draw_artist(coll) 
         self.canvas.blit(self.ax_z.bbox)
@@ -244,8 +254,7 @@ class ContourPlot():
     def add_plot(self, projec=None):
         ''' Draw the data specified in add_data_dialog on the canvas'''
         ts = Topspin()
-        path = self.dir.get()+'/'+self.name.get()+'/'\
-             + self.expno.get()+'/pdata/'+self.procno.get()    
+        path = self.dir.get()+'/'+self.name.get() + '/' + self.expno.get()+'/pdata/'+self.procno.get()    
         ds = ts.getDataProvider().getNMRData(path)       
 
         if ds == None: 
@@ -254,13 +263,12 @@ class ContourPlot():
 
         if projec is None:
             if ds.getDimension() == 1: 
-                top.showError("2D data set expected but 1D given ")
+                top.showError("2D data set expected (1D given) ")
                 self.top.destroy()                
                 
             self.add_data(ds)
             data = self.data[-1]             
-#            self.canvas.restore_region(self.bg_z)
-            self.contour(data['x'], data['y'], data['z'], data['lvls'], color_num=len(self.data)-1)      
+            self.contour(data['x'], data['y'], data['z'], data['lvls'], level_sign=self.level_sign, level_color=len(self.data)-1)      
             for i in range(len(data['lvls'])): 
                 coll = self.ax_z.collections[-i]
                 self.ax_z.draw_artist(coll) 
@@ -268,7 +276,7 @@ class ContourPlot():
             
         else:
             if ds.getDimension() > 1: 
-                ts.showError("1D data set expected but 2D given ")
+                ts.showError("1D data set expected (2D given) ")
                 self.top.destroy() 
                                 
             dv = ds.getSpecDataPoints()
@@ -288,12 +296,11 @@ class ContourPlot():
             elif projec == 'f1':   
                 self.canvas.restore_region(self.bg_y) 
                 ln = self.ax_y.lines[0]
-                ln.set_data(x, z)
-                self.ax_y.set_ylim(bottom=min(z))
+                ln.set_data(z, x)  
+                self.ax_y.set_xlim(right=min(z))
                 self.ax_y.draw_artist(ln)
                 self.canvas.blit(self.ax_y.bbox)                
         self.top.destroy()    
-
 
 class NMRDataSetAttributes: 
 
