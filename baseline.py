@@ -1,8 +1,8 @@
 """
 This script implements interactive baseline correction in 1D. 
 
-Makes use of two external algorithms: std_distribution [1] for its baseline 
-classification part and ws2d [2] for baseline interpolation. 
+Makes use of two external algorithms: std_distribution [1] for the baseline 
+classification part and ws2d [2] for the baseline interpolation. 
 
 Includes GUI for interactive optimization of following parameters: 
  - half_window: the number of data points involved in rolling std calculation;
@@ -20,7 +20,11 @@ Usage requires Python 3.8+ environment
  - from TopSpin command line: xpy3 <script-name> 
 
 written by Oleg Petrov (oleg.petrov@matfyz.cuni.cz)
-version of Mar 10, 2023 
+first version on March 10, 2023 
+
+last modification on December 4, 2024:
+ -- applies to both 1r and 1i files only if their modification times coincide 
+ -- applies even if 1i file is missing (e.g. to magnitute spectra)
  
 """
 import brukerIO
@@ -34,6 +38,7 @@ from bruker.api.topspin import Topspin
 from bruker.data.nmr import *
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from matplotlib.figure import Figure
+from pathlib import Path
 from pybaselines.classification import std_distribution
 from pybaselines.utils import optimize_window
 from scipy.ndimage import zoom
@@ -81,15 +86,18 @@ def reset():
         
 def ok():
     global baseline
-    if len(pdata[0]) > len(y):
+    if len(pdata) > len(y):
         # zoom baseline to match full-size pdata
-        baseline = zoom(baseline, len(pdata[0])/len(y)) 
+        baseline = zoom(baseline, len(pdata)/len(y)) 
                
     # write baseline-corrected pdata in 1r and 1i files
-    if proton.getPar('AQ_mod') == '1':
-        dta.writespect1dri(pdata[0] - baseline, pdata[1] + np.imag(hilbert(baseline)))
+    if not Path(proton.getIdentifier() + '/1i').exists():
+        dta.writespect1dri(pdata - baseline, -np.imag(hilbert(baseline))) 
+        Path.unlink((proton.getIdentifier() + '/1i')) 
+    elif int(Path(proton.getIdentifier() + '/1r').stat().st_mtime) == int(Path(proton.getIdentifier() + '/1i').stat().st_mtime):
+        dta.writespect1dri(pdata - baseline, dta.readspect1d("1i") + np.imag(hilbert(baseline)))
     else:
-        dta.writespect1dri(pdata[0] - baseline, pdata[1])           
+        dta.writespect1dri(pdata - baseline, dta.readspect1d("1i"))
         
     # refresh TopSpin window
     top.getDisplay().show(proton, newWindow=False) 
@@ -112,22 +120,25 @@ if not a.is_processed():
     sys.exit(0)
     
 dta = brukerIO.dataset([a.name, a.expno, a.procno, a.dir])
-pdata = dta.readspect1dri()
+#pdata = dta.readspect1dri()
+pdata = dta.readspect1d("1r")
 
 # downsize data for smoother graphics
-skip = (len(pdata[0])/12288).__ceil__()
+skip = (len(pdata)/12288).__ceil__()
 x = dta.getprocxppm()[::skip]
-y = pdata[0][::skip]
+
+#if Path(proton.getIdentifier() + '/1i').exists()):
+y = pdata[::skip]
 
 # start baseline fitting... 
 hw0 = max(optimize_window(y), optimize_window(-y))
-hw0 = (hw0 / 3).__ceil__()
+hw0 = (hw0 / 4).__ceil__()
 ns0 = 2.0
 
 # classify baseline points 
 mask = get_mask(y, ns0, hw0)
 
-# approximate baseline with Whittaker interpolation
+# approximate baseline with a Whittaker smoother
 baseline, l0 = get_baseline(y, mask)
 
 # plot the result
@@ -152,7 +163,7 @@ ax2.set_ylim(-ymax*0.5, ymax*0.5)
 handler = ScrollEventHandler(ax1)
 figure.canvas.mpl_connect('scroll_event', handler.on_scroll)
 
-# raise a window, await user commands
+# raise the window, await user commands
 root = tk.Tk()
 root.title(a.get_ts_title())
        
