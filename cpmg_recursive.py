@@ -1,15 +1,21 @@
 """
-This script transforms CPMG FID into a cumulative sum of individual echoes,
-represented by either peak intensity or integral. The cumulative sum as 
-a function of echo mumber is fitted with a mono-exponential recursive model
-[J. Phys. Chem. Lett. 2016, 7, 1249-1253]. The relaxation curve is saved to 
-a text file <expno>/pdata/1/ct1t2.001.
+This script transforms CPMG FID into a cumulative sum of the individual echoes,
+each echo being represented by either its peak intensity or integral. 
+The cumulative sum as a function of echo mumber is (optionally) fitted with 
+a mono-exponential relaxation model. The results are saved to a text file 
+<expno>/pdata/1/ct1t2.001.
 
-Suitable for qcpmg type pulse programs with continuous sampling provided 
-that individual echoes are separated by zero data points, as the script splits
-the train into individual echoes by looking for zero points in a data array. 
-Enclosed is a pulse program op_qcpmg that ensures the signal the zero-point 
-separators - consider using it instead of qcpmg.
+Suitable for 1D qcpmg and similar pulse programs with continuous sampling provided 
+that individual echoes are separated by zeroes. Having zeroes is necessary because 
+the script splits the echo train into individual echoes based on zero positions. 
+Enclosed is a pulse program op_qcpmg that outputs a cpmg signal with zeroes between 
+individual echoes - just on this purpose.
+
+Fitting to a cumulative sum of the echoes seems more robust than fitting to the 
+echoes themselves, as summation decreases point-to-point scatter [J. Phys. Chem. 
+Lett. 2016, 7, 1249-1253]. The used formula of fitting applies only to periodic 
+pulse sequences where each signal of a series can be expressed as a function of 
+preceding signals (hence the word 'recursive' in the script's name). 
 
 Usage requires Python 3.8+ environment
 
@@ -38,7 +44,7 @@ from scipy.optimize import leastsq
 from statistics import mode
 from utils import NMRDataSetAttributes, PCA
 
-# The function to be called on changing a radio-button variable
+# The function to be called on changing the radio variable
 def select_signal(): 
     global measure
 
@@ -57,7 +63,7 @@ def select_signal():
 
         canvas.draw()
 
-# The function to be called anytime the 'Fit Me!' button is pressed
+# The function to be called anytime 'Fit Me!' is pressed
 def fitfunc():
     # get best-fit parameters
     p = _fitfunc(np.cumsum(signals[measure]), te)
@@ -104,7 +110,7 @@ def _fitfunc(y, te) -> list:
 def _residual(p, y, te):
     return y - func(p, te)
 
-# The function to fit
+# The function to fit:
 def func(p, te):
     w = np.arange(1, len(xdata) + 1)
     z = np.exp(-p[1] * te)
@@ -113,12 +119,12 @@ def func(p, te):
 # The function to be called anytime 'Save & Quit' is pressed
 def save():
 
-    header = f'tau      {measure}'
+    header = f'tau       {measure}'
     data = np.column_stack((xdata, signals[measure]))
 
     path = proton.getIdentifier() + '/ct1t2.001'
     print(path)
-    np.savetxt(path, data, fmt='%.4e', header=header, newline='\r\n') 
+    np.savetxt(path, data, fmt='%.4e', header=header, comments='', newline='\r\n') 
 
     root.destroy()  
 
@@ -132,15 +138,15 @@ if not proton or proton.getDimension() > 1:
     top.showError("Please switch to a 1D dataset window ")
     sys.exit(0)
 
-# instantiate a brukerIO dataset object
+# instantiate a brukerIO dataset object for read / write functionality:
 a = NMRDataSetAttributes(proton)
 dta = brukerIO.dataset([a.name, a.expno, a.procno, a.dir])
 
-# read cpmg fid  
+# read fid:  
 y = dta.readfidc(rmGRPDLY=False, applyNC=False)
 x = dta.getxtime()[::2]
 
-# find echo segments
+# find echo segments:
 starts, ends = _find_peak_segments(y == 0)
 period  = mode(ends - starts)
 
@@ -163,7 +169,7 @@ x2 = np.asarray(x2)
 xdata = np.mean(x2, axis=1)
 te = np.mean(np.diff(xdata))
 
-# evaluate echo signal
+# evaluate echo signal:
 pca = PCA( y2 )
 npc = pca.malinowski_indicator()
 
@@ -174,7 +180,7 @@ integrals *= midpoints[0] / integrals[0]
 signals = {'intensity': midpoints.real, 'area': integrals.real}
 measure = 'intensity' 
 
-# initialize matplotlib drawables
+# prepare matplotlib drawables :   
 figure = Figure(figsize=(1.25*6.4, 2.2*4.8))
 ax1 = figure.add_subplot(211)
 ax2 = figure.add_subplot(212)
@@ -190,7 +196,7 @@ ax1.ticklabel_format(axis='y', scilimits=(sl,sl))
 ax2.set_xlabel('s')
 ax2.xaxis.set_label_coords(1.02, -0.03)  
 
-# draw (on a tkinter canvas)
+# draw it (on a tkinter canvas)
 ax1.plot(x, y.real, label='Re')  
 ax1.plot(x, y.imag, label='Im')
 ax1.plot(xdata, signals[measure], '*', label='echo signal') 
@@ -204,7 +210,7 @@ ax2.legend(frameon=False)
 annotation = AnchoredText('', loc=5,  frameon=False)
 ax2.add_artist(annotation) 
 
-# raise a window, await user's commands
+# raise a tkinter window, await user's commands
 root = tk.Tk()
 root.title(a.get_ts_title())
 
