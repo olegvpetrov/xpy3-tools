@@ -1,7 +1,7 @@
 """
-Peak alignment in a series of spectra with pyicoshift (github.com/sekro/pyicoshift)
+Peak alignment with pyicoshift (https://github.com/sekro/pyicoshift)
  
------------------------ Comments to original pyicoshift: -----------------------
+----------------------- Original comments to pyicoshift: -----------------------
 
 pyicoshift
 from scratch python implementation of the
@@ -49,7 +49,6 @@ from matplotlib.offsetbox import AnchoredText
 from matplotlib.widgets import SpanSelector
 from pybaselines.utils import optimize_window
 from pyicoshift import Icoshift
-from time import sleep
 from utils import NMRDataSetAttributes, ScrollEventHandler
 
 # The function called on span selection
@@ -166,7 +165,7 @@ icosh = Icoshift()
 proton = dp.getCurrentDataset()
 signals, intervals, spans = [], [], []
 
-# read 1D datasets associated with proton via multiple display
+# read 1D datasets associated with proton upon multiple display
 if proton.getDimension() == 1:
     proton.launch('.ret')
     proton.launch('.md')
@@ -209,10 +208,10 @@ if proton.getDimension() == 2:
     signals_full = dta.readspect2d(name="2rr")
     signals = signals_full[np.any(signals_full, axis=1)]
     
-    # prepare for using abs(signals) if negative peaks are present (as e.g. in t1ir)
+    # prepare for using abs(signals) just in case negative peaks are present (as in t1ir)
     mask = signals != abs(signals)
     
-# initialize matplotlib figure
+# define matplotlib figure
 fig = Figure(figsize=(1.25*6.4, 4.4*4.8))
 ax1 = fig.add_subplot(211)
 ax2 = fig.add_subplot(212, sharex=ax1, sharey=ax1)
@@ -231,7 +230,7 @@ for y in signals:
     ax1.plot(ppm, y)
     ax2.plot([], [])
 
-# raise a window, await user's commands             
+# raise tkinter window, await user's commands             
 root = tk.Tk()
 root.wm_title(NMRDataSetAttributes(proton).get_ts_title())
 
@@ -270,6 +269,6 @@ canvas_widget.pack(side='top', fill='both', expand=True)
         
 # use span selector
 span_selector = SpanSelector(ax1, onselect, 'horizontal', useblit=True, props=dict(alpha=0.5, facecolor='tab:blue'))
-canvas.mpl_connect('key_press_event', span_selector)
+#canvas.mpl_connect('key_press_event', span_selector)
 
 root.mainloop()
