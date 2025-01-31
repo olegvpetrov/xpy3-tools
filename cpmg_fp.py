@@ -1,13 +1,15 @@
 """
-This script is intended for qcpmg type pulse programs generating continuously sampled 
-echo decays (aka echo trains). The script will collapse the train into one average echo 
-and process it into a regular 1D spectrum, following whole-echo processing steps.
+This script converts a continuous echo train into one average echo and processes 
+it into a regular 1D spectrum (aka whole-echo processing)
 
-Suitable for qcpmg type pulse programs with continuous sampling provided that
-the echoes are separated by one or more zero data points. This is necessery because 
-the script splits the signal into individual echoes by looking for zero data points. 
-Enclosed is a pulse program op_qcpmg that ensures the signal the zero-point separators 
-- consider using it instead of qcpmg. 
+Suitable for 1D qcpmg and similar pulse programs with continuous sampling, provided 
+that (i) whole echoes are acquired, not fid's and (ii) the echoes are separated by
+zero data points. Having zeroes is necessary as the script splits the echo train into
+individual echoes based on the zero positions. Enclosed is a pulse program op_qcpmg
+that outputs a cpmg signal with zeroes between individual echoes - just on purpose. 
+
+Applying the cpmg_fp command to an echo train will produce a regular continuous 
+spectrum, as opposed to the fp command that results in a spectrum made of discrete spikelets.
 
 Usage requires Python 3.8+ environment
 
@@ -34,7 +36,7 @@ from scipy.optimize import leastsq, minimize
 from statistics import mode
 from utils import NMRDataSetAttributes, fft
 
-# The function called on changing the number of echoes in the sum
+# The function called on changing the number of averaged echoes
 def update_nech(val):
     global ydata
     ydata = np.mean(y2[:nech.get()], axis=0) 
@@ -63,7 +65,7 @@ if not proton or proton.getDimension() > 1:
 a = NMRDataSetAttributes(proton)
 dta = brukerIO.dataset([a.name, a.expno, a.procno, a.dir])
 
-# read the echo train
+# read the echo train:  
 y = dta.readfidc(rmGRPDLY=False, applyNC=False)
 x = dta.getxtime()[::2]
 
@@ -75,7 +77,7 @@ if len(starts) == 1:
     top.showError("Cannot find zero-separated segments in the signal:\nDivision into echoes aborted.")
     sys.exit(0)
 
-# deal with missing echoes, if any
+# deal with missing echoes, if any:    
 idx = (np.diff(starts) > 1.5*period).nonzero()[0] + 1
 starts = np.insert(starts, idx, starts[idx-1] + period)
 
@@ -189,12 +191,12 @@ if ok_flag:
     xdata = np.arange(-pivot, -pivot + yfft.size) / yfft.size
     skip = max(1, len(yfft) // 1024)
 
-    def fun(p, yfft):
-        re = (yfft * np.exp(1.j * (p[0] + (p[1] * xdata[::skip])))).real
-        im = (yfft * np.exp(1.j * (p[0] + (p[1] * xdata[::skip])))).imag
+    def fun(p, xdata, yfft):
+        re = (yfft * np.exp(1j * (p[0] + (p[1] * xdata)))).real
+        im = (yfft * np.exp(1j * (p[0] + (p[1] * xdata)))).imag
         return np.sqrt(np.mean((re - im)**2))
 
-    res = minimize(fun, [0., 0.], args=(yfft[::skip]), method='powell')
+    res = minimize(fun, [0., 0.], args=(xdata[::skip], yfft[::skip]), method='powell')
 
     if np.sum(yfft.real) > 0:
         phc0 = res.x[0] - 45*np.pi/180
