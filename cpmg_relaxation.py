@@ -1,14 +1,14 @@
 """
-This script splits a CPMG FID into individual echo segments and evaluates the echoes
-using either peak intensity or integral. The resulting relaxation curve are fitted 
-with mono or stretched exponential decay functions. The curve is saved to a text file 
-<expno>/pdata/1/ct1t2.001.
+This script splits a CPMG FID into individual echo segments and evaluates the echo
+intensity as either peak intensity or integral, using PCA quantitation approach. 
+The resulting relaxation curve can be fitted with mono or stretched exponential 
+decay functions. The curve is saved to a text file <expno>/pdata/1/ct1t2.001.
 
-Suitable for qcpmg type pulse programs with continuous sampling provided 
-that individual echoes are separated by zero data points, as the script splits
-the train into individual echoes by looking for zero points in a data array. 
-Enclosed is a pulse program op_qcpmg that ensures the signal the zero-point 
-separators - consider using it instead of qcpmg.
+Suitable for 1D qcpmg and similar pulse programs with continuous sampling provided 
+that individual echoes are separated by zeroes. Having zeroes is necessary because 
+the script splits the echo train into individual echoes based on zero positions. 
+Enclosed is a pulse program op_qcpmg that outputs a cpmg signal with zeroes between 
+individual echoes - just on this purpose.
 
 Usage requires Python 3.8+ environment
 
@@ -37,7 +37,7 @@ from scipy.optimize import leastsq
 from statistics import mode
 from utils import NMRDataSetAttributes, PCA
 
-# The function called on changing a radio-button variable var1
+# The function called on changing the radio-button variable var1:
 def select_signal(): 
     global measure
 
@@ -50,13 +50,13 @@ def select_signal():
             figure.axes[1].lines[1].set_ydata([None])
             figure.axes[1].legend([figure.axes[1].lines[0]], ['echo signal'])
 
-        # replace ydata for selected signal and update the plots
+        # replace ydata for a selected signal and update the plots
         figure.axes[0].lines[2].set_ydata(signals[measure])
         figure.axes[1].lines[0].set_ydata(signals[measure])
 
         canvas.draw()
 
-# The function to be called anytime the 'Fit Me!' button is pressed
+# The function to be called anytime 'Fit Me!' is pressed:
 def fitfunc():    
     # get best-fit parameters
     p = _fitfunc(xdata, signals[measure])
@@ -122,14 +122,14 @@ def func(p, x):
     elif len(p) == 4:		# stretched exponential function
         return p[0] * np.exp(-(p[1]*x) ** p[3]) + p[2]
 
-# The function to be called anytime 'Save & Quit' is pressed
+# The function to be called anytime 'Save & Quit' is pressed:
 def save():
 
-    header = f'tau      {measure}'
+    header = f'tau       {measure}'
     data = np.column_stack((xdata, signals[measure]))
 
     path = proton.getIdentifier() + '/ct1t2.001'
-    np.savetxt(path, data, fmt='%.4e', header=header, newline='\r\n') 
+    np.savetxt(path, data, fmt='%.4e', header=header, comments='', newline='\r\n') 
 
     root.destroy()
 
@@ -143,15 +143,15 @@ if not proton or proton.getDimension() > 1:
     top.showError("Please switch to a 1D data set ")
     sys.exit(0)
 
-# instantiate a brukerIO dataset object
+# instantiate a brukerIO dataset object for read / write functionality:
 a = NMRDataSetAttributes(proton)
 dta = brukerIO.dataset([a.name, a.expno, a.procno, a.dir])
 
-# read cpmg fid  
+# read fid:  
 y = dta.readfidc(rmGRPDLY=False, applyNC=False)
 x = dta.getxtime()[::2]
 
-# find echo segments
+# find echo segments:
 starts, ends = _find_peak_segments(y == 0)
 period  = mode(ends - starts)
 
@@ -159,7 +159,7 @@ if len(starts) == 1:
     top.showError("Cannot find zero-separated segments in the signal:\nDivision into echoes aborted.")
     sys.exit(0)
 
-# deal with missing echoes, if any    
+# deal with missing echoes, if any:    
 idx = (np.diff(starts) > 1.5*period).nonzero()[0] + 1
 starts = np.insert(starts, idx, starts[idx-1] + period)
 
@@ -172,7 +172,7 @@ if len(y2[-1]) != len(y2[0]):
 y2 = np.asarray(y2)
 x2 = np.asarray(x2)
 
-# evaluate echo signal
+# evaluate echo signal:
 pca = PCA( y2 )
 npc = pca.malinowski_indicator()
 
@@ -186,7 +186,7 @@ measure = 'intensity'
 xdata = np.mean(x2, axis=1)
 ydata = signals[measure]
 
-# initialize matplotlib drawables
+# prepare matplotlib drawables : 
 figure = Figure(figsize=(1.25*6.4, 2.2*4.8))
 ax1 = figure.add_subplot(211)
 ax2 = figure.add_subplot(212)
@@ -201,7 +201,7 @@ ax1.ticklabel_format(axis='y', scilimits=(sl,sl))
 ax2.set_xlabel('s')
 ax2.xaxis.set_label_coords(1.02, -0.03) 
 
-# draw (on a tkinter canvas)
+# draw it (on a tkinter canvas)
 ax1.plot(x, y.real, label='Re')  
 ax1.plot(x, y.imag, label='Im')
 ax1.plot(xdata, ydata, '*', label='echo signal') 
@@ -215,7 +215,7 @@ ax2.legend(frameon=False)
 annotation = AnchoredText('', loc=5,  frameon=False)
 ax2.add_artist(annotation) 
 
-# raise a window, await user's commands
+# raise a tkinter window, await user's commands
 root = tk.Tk()
 root.wm_title(a.get_ts_title())
 
