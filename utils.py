@@ -2,11 +2,7 @@
 Contains common utility functions and classes.
 
 written by Oleg Petrov (oleg.petrov@matfyz.cuni.cz)
-first version on August 17, 2023
-
-last modification on December 13, 2024:
- -- added a level_sign property in CountourPlot
- -- bug fixes
+version of August 17, 2023
 
 '''
 import brukerIO
@@ -426,7 +422,7 @@ class PCA:
 
 class ProgressbarThread(threading.Thread):
     def __init__(self, title='', maximum=None):
-        threading.Thread.__init__(self)
+        threading.Thread.__init__(self, daemon=True)
         self.title = title 
         
         if maximum:
@@ -434,10 +430,6 @@ class ProgressbarThread(threading.Thread):
             self.mode = 'determinate'
         else:    
             self.mode = 'indeterminate'   
-         
-        self.daemon = True    
-        # event object for stopping thread
-        self.stop_event = threading.Event()
              
         self.lock = threading.Lock()    # (1)
         self.lock.acquire()             # (2)
@@ -448,7 +440,6 @@ class ProgressbarThread(threading.Thread):
             return
 
     def close(self):
-        self.stop_event.set()
         if self.mode == 'indeterminate':    
             os._exit(1)
 
@@ -472,6 +463,45 @@ class ProgressbarThread(threading.Thread):
 
     def update(self, value: int):
         self.pb['value'] = value
+
+class ProgressbarToplevel:
+    def __init__(self, master, title='', maximum=None):
+        self.master = master
+        self.title = title
+        
+        if maximum:
+            self.maximum = int(maximum)
+            self.mode = 'determinate'
+        else:    
+            self.mode = 'indeterminate' 
+
+        self.top = tk.Toplevel(self.master)
+        self.top.title(self.title)
+
+        x = self.master.winfo_x() + self.master.winfo_width()//2 - self.top.winfo_width()//2
+        y = self.master.winfo_y() + self.master.winfo_height()//2 - self.top.winfo_height()//2
+        self.top.geometry(f"400x20+{x}+{y}")
+        
+        self.top.resizable(0, 0)
+        self.top.wait_visibility()
+       
+        self.pb = ttk.Progressbar(self.top, length=400, mode=self.mode)
+        if self.mode == 'determinate':  
+            self.pb['value'] = 0
+            self.pb['maximum'] = self.maximum
+        else:
+            self.pb.start(interval=20)
+
+        self.pb.pack()
+        self.top.protocol("WM_DELETE_WINDOW", lambda: 0) # not able to close the pop
+
+ 
+    def update(self, value: int):
+        self.pb['value'] = value
+        self.top.update()
+        
+    def close(self):
+        self.top.destroy()
         
 
 class ScrollEventHandler:
