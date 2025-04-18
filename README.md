@@ -36,5 +36,11 @@ If you find xpy3-tools useful in your research please cite the package as:
 
 https://github.com/olegvpetrov/xpy3-tools
 
+## Contact
+Please contact oleg.petrov@matfyz.cuni.cz with any quesitons, feedback, or suggestions.
+
+## License
+MIT
+
 
 
