@@ -185,7 +185,6 @@ class ContourPlot():
             
     def contour(self, x, y, z, levels=None, level_sign=0, level_color=0):
         ''' Generate contour lines and pass 'em to the renderer.'''
-        print(level_sign)
         if levels is None: 
             levels = self.data[0]['lvls']
         if level_sign == 1:
