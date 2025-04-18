@@ -424,6 +424,7 @@ class ProgressbarThread(threading.Thread):
     def __init__(self, title='', maximum=None):
         threading.Thread.__init__(self, daemon=True)
         self.title = title 
+        self.stop_event = threading.Event()
         
         if maximum:
             self.maximum = int(maximum)
@@ -440,6 +441,7 @@ class ProgressbarThread(threading.Thread):
             return
 
     def close(self):
+        self.stop_event.set()
         if self.mode == 'indeterminate':    
             os._exit(1)
 
