@@ -60,7 +60,7 @@ def sampling_schedule_mri(z, nus, weighted=True):
     v2 = sampling_schedule(z//2, nus, weighted=weighted) 
     return np.r_[-v1[::-1], v2[1:]]+z//2
 
-def denoise(data, nus='auto', samples=20, runs=10, weighted=True, mri=False):
+def denoise(data, nus=None, samples=None, runs=10, weighted=True, mri=False):
     '''
     A driver for _denoise() function. Calls _denoise() twice to obtain attenuated
     versions of PCs of the data matrix as well as its transpose. The PCs thus
@@ -77,7 +77,7 @@ def denoise(data, nus='auto', samples=20, runs=10, weighted=True, mri=False):
  
     Output: approximated (denoised) data, of the original dim1 x dim2 shape
     ''' 
-    if nus == 'auto':
+    if nus is None:
     # estimate nus amount     
         pca_full = utils.PCA(data)
         npc = min(5, pca_full.gavish_donoho_indicator())
