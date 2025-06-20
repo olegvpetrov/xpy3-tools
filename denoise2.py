@@ -24,17 +24,57 @@ import utils
 from bruker.api.topspin import Topspin
 from bruker.data.nmr import *
 
-def sampling_schedule(z, nus, weighted=True):
+def sine_bell(dim, ssb=1, convex=False):    
+    '''
+    Return a window with a sine bell shape.
+    
+    Parameters
+    ----------
+    dim : int
+        Number of points in the output window.
+    ssb : int
+        Sine-bell shift, analogous to Topspin's SSB. For ssb = 2 the window's 
+        maximum is its first element. For ssb > 2 the maximum is gradually shifted
+        towards the center. For ssb < 2 the maximum stays at the center. 
+    convex : bool, optional
+        When True, generates an upside (convex) window, for use in sampling schedules.
+        
+    Returns
+    -------
+    w : ndarray
+        The window, with the maximum value normalized to 1
+    '''
+    assert 0 <= ssb <= dim
+        
+    if ssb < 2:
+        w = np.sin(np.pi * (np.arange(dim) + 0.5) / dim)
+    else:
+        w = np.sin(np.pi / ssb + np.pi* (ssb - 1.) / ssb * (np.arange(dim) + 0.5) / dim)   
+    
+    if convex:    
+        return (1. - w)
+    else:    
+        return w
+
+def sampling_schedule(z, nus, weighted=False):
     '''
     Poisson-gap sampling with optional sinusoidal weights of the gaps
     (see Hyberts et al. JACS 132 (2010) 2145–2147; 10.1021/ja908004w)
 
-    Parameters:  z : total number of points
-                 nus : fraction of sampled points (a.k.a. nus amount)
-                 weighted : sinusoidal weighting of the gaps between samples
+    Parameters:  
+    ----------
+    z : total number of data points
+    nus : fraction of sampled data points (a.k.a. 'NUS amount' in Topspin)
+    weighted : when True, modulates the gaps between samples with a sine bell function
                  
-    Return:      v : random numbers within [0:z-1] with Poisson-distributed gaps
+    Returns:     
+    ----------
+    v : random numbers within [0:z-1] with Poisson distribution of gaps
     '''
+    if weighted:
+#        w = sine_bell(z, ssb=2)[::-1]	# same as in [Hyberts_2010]
+        w = sine_bell(z, convex=True)	# complementary to [Hyberts_2010]
+       
     v = np.zeros((z,), dtype=int) 
     p = nus * z 
     adj = float(z) / float(p) - 1 # initial guess of adjustment
@@ -44,55 +84,62 @@ def sampling_schedule(z, nus, weighted=True):
             v[n] = i
             i += 1
             if weighted:
-                k = np.random.poisson(adj * (1.- np.sin((i+0.5)/(z+1)*np.pi)))
+                k = np.random.poisson(adj * w[i-1])
             else:
                 k = np.random.poisson(adj)                
             i += k
             n += 1    
         if n == int(p): break 
         if n > p: adj *= 1.02
-        if n < p: adj /= 1.02
+        if n < p: adj /= 1.02 
+              
     return v[:n]
 
-# A special case of k-space sampling, to accent central points
-def sampling_schedule_mri(z, nus, weighted=True):
+# Special case of k-space sampling - with emphasis to central rows
+def sampling_schedule_mri(z, nus, weighted=False):
     v1 = sampling_schedule(z//2+1, nus, weighted=weighted)
     v2 = sampling_schedule(z//2, nus, weighted=weighted) 
     return np.r_[-v1[::-1], v2[1:]]+z//2
 
 def denoise(data, nus=None, samples=None, runs=10, weighted=True, mri=False):
     '''
-    A driver for _denoise() function. Calls _denoise() twice to obtain attenuated
-    versions of PCs of the data matrix as well as its transpose. The PCs thus
-    obtained are transformed into 2D 'PC layers' (kernels) to reconstruct the data.
+    Driver for _denoise() function. Calls _denoise() twice to obtain attenuated
+    versions of PCs of the original data matrix and its transpose. Thus obtained 
+    PCs are transformed into 2-D PC layers for use in data reconstruction.
      
-    Input:
+    Parameters:
+    ----------
     data : dim1 x dim2 array of complex data
 
-    nus : (optional) The fraction of dim1 to sample, in [0, 1]
+    nus : (optional) Fraction of dim1 to sample. When given, must be in [0, 1]
 
-    samples : (optional) The number of inner loops for data sampling and PCA
+    samples : (optional) Number of inner loops where data samples are generated 
+              and subjected to SVD.
             
-    runs : (optional) The number of outer loops for averaging the reconstructed PC's
+    runs : (optional) Number of outer loops where reconstructed PCs are averaged by
+           simple adding the output of _denoise()
  
-    Output: approximated (denoised) data, of the original dim1 x dim2 shape
+    Returns: 
+    ----------
+    approximated (denoised) data, of the original shape dim1 x dim2
     ''' 
     if nus is None:
-    # estimate nus amount     
-        pca_full = utils.PCA(data)
-        npc = min(5, pca_full.gavish_donoho_indicator())
-
-        nus_rng = np.geomspace(.25, 1., num=16)
-        csm = []	# cosine similarity
-
+        nus_rng = np.linspace(.1, 1., num=24)
         pb = utils.ProgressbarThread(title='Estimating NUS amount... ', maximum=len(nus_rng))
 
+        pca_full = utils.PCA(data)
+        npc = min(10, nus_rng[0] * data.shape[0])
+        
+        csm = []    # cosine similarity   
         for i, nus in enumerate(nus_rng):
             d = np.zeros(npc)
             for m in range(10): 
-                ws = sampling_schedule(len(data), nus)
+                if mri:
+                    ws = sampling_schedule_mri(len(data), nus, weighted=weighted)
+                else:
+                    ws = sampling_schedule(len(data), nus, weighted=weighted)    
                 pca = utils.PCA(data[ws])
-        
+                           
                 # calculate the cosine similarity between PC vectors
                 A = np.abs(pca_full.pcs[:npc])
                 B = np.abs(pca.pcs[:npc])
@@ -101,25 +148,25 @@ def denoise(data, nus=None, samples=None, runs=10, weighted=True, mri=False):
             if pb.stop_event.is_set():
                 shutil.rmtree(f'{a.dir}/{a.name}/{str(new_expno)}/')
                 sys.exit()
-            pb.update(i+1)
-            csm.append(d/10)
+            pb.update(i + 1)
+            csm.append(d / 10)
 
         pb.close()
 
-        # compute slopes of csm vs nus:
-        y = (csm[-1]- csm)[::-1]
-        x = nus_rng - nus_rng[0]
-        slopes = x.dot(y) / x.dot(x)
+       # linear fit of csm vs. log(nus)
+        y = csm[-1] - csm
+        x = np.log(nus_rng)
+        x-= x[-1]
 
-        # find where csm drops below 0.9:
-        ymean = np.mean(np.outer(x, slopes), axis=-1)
-        nus = nus_rng[(ymean > .01).sum()]
+        # find where mean csm drops below 0.99, watch the bounds:
+        ymean = np.mean(np.outer(x, x.dot(y) / x.dot(x)), axis=-1)
+        nus = min(max(0.5, nus_rng[(ymean > 0.01).sum()]), 0.9)
         
     else:
         nus = float(nus)
         assert 0. < nus < 1.
-        
-    pb = utils.ProgressbarThread(title='Denoising in progress', maximum=runs*2)
+   
+    pb = utils.ProgressbarThread(title='De-noising in progress', maximum=runs*2)
             
     pcs1 = _denoise(data, nus, samples, weighted, mri)
     pb.update(1) 
@@ -135,7 +182,7 @@ def denoise(data, nus=None, samples=None, runs=10, weighted=True, mri=False):
     data = data.T
     
     pcs2 = _denoise(data, nus, samples, weighted, mri)
-    pb.update(runs+1)  
+    pb.update(runs + 1)  
     
     for i in range(1, runs):
         pcs2 += _denoise(data, nus, samples, weighted, mri)
@@ -143,31 +190,31 @@ def denoise(data, nus=None, samples=None, runs=10, weighted=True, mri=False):
         if pb.stop_event.is_set():
             shutil.rmtree(f'{a.dir}/{a.name}/{str(new_expno)}/')
             sys.exit()
-        pb.update(runs+i+2) 
+        pb.update(runs + i + 2) 
 
     pcs1 /= runs      
     pcs2 /= runs
         
     # calculate outer products between vectors stored in pcs1 and pcs2
     npc = min(len(pcs1), len(pcs2))
-    kernels = pcs1[:npc,:,None] @ pcs2[:npc,None,:]
+    pc_layers = pcs1[:npc,:,None] @ pcs2[:npc,None,:]
 
     # calculate Frobenius inner products between each kernel and data
-    fscores = np.tensordot(kernels, data.conj())
+    fscores = np.tensordot(pc_layers, data.conj())
     
     # filter data
-    data_approx = np.tensordot(fscores.conj(), kernels, axes=(0, 0))
+    data_approx = np.tensordot(fscores.conj(), pc_layers, axes=(0, 0))
     
     pb.close()
     return data_approx.T
 
 def _denoise(data, nus, samples, weighted, mri):
     ''' 
-    Repeated data sampling, of size dim1 x nus, followed by PCA, resulting in 
+    Repeat data sampling (samples of size dim1 x nus) and follow by PCA to get 
     a series of dim1 x nus matrices of psudo-random PCs. The psudo-random PCs 
-    of same rank are used to approximate a full-data PC of that rank. The full-
-    data PCs thus approximated ('denoised') are sent to the function denoise() 
-    to proceed with approximation of data themselves. 
+    of same rank are used to approximate a full-data PC of that rank. Thus
+    approximated full-data PCs ('denoised PCs') are sent back to denoise() to 
+    proceed with data approximation. 
     '''
     
     # PCA on the whole of data
@@ -228,9 +275,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--nus", type=float, default=None)
 parser.add_argument("--samples", type=int, default=20)
 
-# denoise data
+# denoise data, unweight data
 args = parser.parse_args()
-data_denoised = denoise(data, nus=args.nus, samples=args.samples, runs=10)
+data_denoised = denoise(data, nus=args.nus, samples=args.samples, weighted=True)
 
 # write denoised data to a ser file  
 data_denoised = np.dstack((data_denoised.real, data_denoised.imag))
