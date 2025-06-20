@@ -2,7 +2,7 @@
 Contains common utility functions and classes.
 
 written by Oleg Petrov (oleg.petrov@matfyz.cuni.cz)
-version of August 17, 2023
+version of April 25, 2025
 
 '''
 import brukerIO
@@ -50,7 +50,12 @@ class ContourPlot():
         
         xlabel = f'{ds.getPar("2s AXNUC")} (ppm)'
         ylabel = f'{ds.getPar("1s AXNUC")} (ppm)'
-        self.ax_z.set(xlabel=xlabel, ylabel=ylabel)
+
+        self.ax_z.set_xlabel(xlabel, fontsize = 12)
+        self.ax_z.set_ylabel(ylabel, fontsize = 12)
+
+        self.ax_z.xaxis.set_tick_params(labelsize=12)
+        self.ax_z.yaxis.set_tick_params(labelsize=12)
 
         self.ax_z.yaxis.tick_right()
         self.ax_z.yaxis.set_label_position('right')
