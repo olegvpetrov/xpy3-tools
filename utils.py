@@ -530,7 +530,7 @@ class ScrollEventHandler:
 
 
 def fft(data, fcor=0.5, axis=-1):
-    ''' Fast Fourier transformation, an NMR style '''
+    ''' Fast Fourier transformation '''
     if axis < 0:
         axis += data.ndim
     if not 0 <= axis < data.ndim:
