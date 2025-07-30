@@ -28,6 +28,8 @@ from utils import ProgressbarThread, NMRDataSetAttributes, PCA
 def toeplitz_vector(mat):
     """
     Convert Toeplitz matrix to one-dimensional data
+    
+    Credits: Guillaume Laurent & Pierre-Aymeric Gilles (doi.org/10.1080/05704928.2018.1559851)
 
     """
     row, col = mat.shape
