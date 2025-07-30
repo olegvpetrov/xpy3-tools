@@ -2,12 +2,12 @@
 Contains common utility functions and classes.
 
 written by Oleg Petrov (oleg.petrov@matfyz.cuni.cz)
-version of April 25, 2025
+version of July 25, 2025
 
 '''
 import brukerIO
-import matplotlib.pyplot as plt
-import matplotlib.gridspec as gridspec
+#import matplotlib.pyplot as plt
+#import matplotlib.gridspec as gridspec
 import numpy as np
 import re
 import os
@@ -23,9 +23,12 @@ from contourpy.util.mpl_renderer import MplRenderer
 from matplotlib import gridspec 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from pathlib import Path
+from scipy.interpolate import pchip_interpolate
+
+complex_types = [np.complex64, np.complex128]
 
 class ContourPlot():
-    ''' 2D spectrum display with basic options: zoom, scale, add, ... '''
+    ''' 2D spectrum display with basic tools: zoom, scale, add, ... '''
 
     figsize = (8.0, 8.0)   
     palette = [['#0000FF', '#008080'], ['#ED1C24', '#B2009A'],
@@ -59,7 +62,10 @@ class ContourPlot():
 
         self.ax_z.yaxis.tick_right()
         self.ax_z.yaxis.set_label_position('right')
-        plt.setp(self.ax_z.get_yticklabels(), rotation=90, va='center')
+#        plt.setp(self.ax_z.get_yticklabels(), rotation=90, va='center')
+        self.ax_z.set_yticklabels(self.ax_z.get_yticklabels(), rotation=90, va='center')
+        
+        self.ax_z.set_xticks(ax.get_yticklabels(), rotation=45, ha='right')
         
         self.ax_y.invert_xaxis()
         self.ax_y.axis('off')
@@ -329,7 +335,7 @@ class NMRDataSetAttributes:
                 
 class PCA:
     ''' 
-    Signal quantitation and approximation by means of principal component analysis
+    Signal quantitation and approximation through principal component analysis
     
     Parameters: 
         X:  2D array of (complex) data   
@@ -351,21 +357,21 @@ class PCA:
         self.scores = self.U * self.d	# PC scores 
         self.npc = len(self.d)		# the number of PCs
                       
-    def evaluate( self, n=1 ):
+    def evaluate(self, n=1):
         ''' evaluate signal integrals using first n principal components 
         '''
         assert 1 <= n <= self.npc
         data_approx = self.approximate(n=n)        
         return np.sum(data_approx, axis=1)
                            
-    def evaluate_at_index( self, index=0, n=1 ):
+    def evaluate_at_index(self, index=0, n=1):
         ''' evaluate signal at a given point using first n principal components 
         '''
         assert 1 <= n <= self.npc
         data_approx = self.approximate(n=n) 
         return data_approx[:, index]        
         
-    def approximate( self, n=1):
+    def approximate(self, n=1):
         ''' reconstruct signal using first n principal components '''
         assert 1 <= n <= self.npc
         data_approx = self.scores[:,:n].dot(self.pcs[:n,:])
@@ -399,20 +405,20 @@ class PCA:
         Gavish and Donoho's indicator of principal component significance that guarantees 
         best asymptotic mean squared error between denoised and hypothetical noiseless data.
 
-        See D. L. Donoho and M. Gavish, "The Optimal Hard Threshold for Singular
+        See M. Gavish and D. L. Donoho, "The Optimal Hard Threshold for Singular
         Values is 4/sqrt(3)", http://arxiv.org/abs/1305.5870.
         
         :sigma: a scalar in X = X0 + sigma*Z, where X0 is noiseless data and Z the
                 noise matrix; defaults to None, meaning 'an unknown noise level'
                 
-        :return: number of AMSE-optimal principal components, for data approximation
+        :return: number of AMSE-optimal principal components
         '''  
         m, n = self.data.shape
         assert m <= n
         beta = m / n
         
         if sigma is not None:
-            if isinstance(self.data[0,0], complex):
+            if any(isinstance(self.data[0,0], t) for t in complex_types):
                 sigma *= np.sqrt(2)
             w = (8* beta) / (beta + 1 + np.sqrt(beta**2 + 14 * beta + 1))
             lambda_star = np.sqrt(2* (beta + 1) + w)
@@ -423,6 +429,74 @@ class PCA:
             
         return len(self.d[x]) if x.any() else 1
 
+    def get_noise_std(self, high_precision=False):
+        '''
+        Gavish and Donoho's estimator for the parameter sigma in the model 
+        X = X0 + sigma*Z, where X0 is noiseless data and Z the noise matrix.
+        
+        See Gavish and Donoho 2014, http://arxiv.org/abs/1305.5870
+        
+        :return: sigma
+        ''' 
+        m, n = self.data.shape
+        assert m <= n
+        beta = m / n
+
+        if high_precision:
+            # make use of Marchenko-Pastur (M.-P.) distribution       
+            if not hasattr(self, '_noise_eigen'):
+                self._noise_eigen = self._marchenko_pastur_cdf()
+ 
+            mu = self._noise_eigen[m//2]	# M.-P. distribution median
+            sigma = np.median(self.d) / np.sqrt(n * mu)        
+            
+        else:
+            # use the optimal hard threshold approximation
+            w = (8* beta) / (beta + 1 + np.sqrt(beta**2 + 14 * beta + 1))
+            lambda_star = np.sqrt(2* (beta + 1) + w)
+        
+            omega = 0.56* beta**3 - 0.95* beta**2 + 1.82* beta + 1.43 
+            sigma = (omega * np.median(self.d)) / (lambda_star * np.sqrt(n))
+         
+        if any(isinstance(self.data[0,0], t) for t in complex_types):
+            sigma /= np.sqrt(2)
+        
+        return sigma
+        
+    def _marchenko_pastur_cdf(self):
+        '''
+        Marchenko-Pastur cumulative distribution of eigenvalues of random noise covariance 
+        matrix with unit standard deviation of the noise (Marchenko and Pastur 1967). 
+        
+        Meant to be one-time calculation for given data shape.
+    
+        Credits: Epps and Krivitzky 2019, doi.org/10.1007/s00348-019-2761-y
+                            
+        Returns:
+        ----------
+        nrows eigenvalues corresponding to their cumulative probabilities on a linear grid [0, 1]
+        
+        '''
+        nrows, ncols = self.data.shape
+        assert nrows < ncols
+
+        beta = nrows / ncols
+        k = np.arange(nrows)
+         
+        # the smallest and largest eigenvalues of E
+        a = (1 - np.sqrt(beta))**2
+        b = (1 + np.sqrt(beta))**2
+        
+        # define cumulative M.-P. distribution function P(z)      
+        P = lambda z: .5 / (np.pi * beta) * (2 * np.sqrt(a * b) * (np.arctan( np.sqrt(a * (b - z) / (b * (z - a))) ) - np.pi*.5) + (a + b)*.5 * (np.arctan((z - (a + b)*.5) / np.sqrt((b - z) * (z - a)) ) + np.pi*.5) + np.sqrt((b - z) * (z - a)))
+    
+        # interpolate singular values on a grid with nrows steps
+        z = np.linspace(a, b, nrows)[1:-1]
+        _P = np.linspace(0, 1, nrows)
+        _z = pchip_interpolate(np.r_[0., P(z), 1.], np.r_[a, z, b], _P)
+        
+        return _z
+        
 
 class ProgressbarThread(threading.Thread):
     def __init__(self, title='', maximum=None):
