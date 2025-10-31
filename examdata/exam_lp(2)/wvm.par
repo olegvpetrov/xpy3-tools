@@ -1,0 +1,11 @@
+## Wavemaker parameter file. 
+## PULPROG: zgesgp 
+
+zgesgp_sp1:f1 
+  rvega4(0.5kHz)
+  nuc =  1H 
+  p90 =   9.800 us
+  pl =   24.000000 W
+  BF =  500.1300000 MHz
+  ofs =   4.700000 ppm 
+

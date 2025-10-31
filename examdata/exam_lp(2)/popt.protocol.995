@@ -1,0 +1,14 @@
+
+Report of AU program poptau
+# Start time: 2022-07-09 14:23:10.890 +0200
+
+F1P=6.275ppm F2P=3.163ppm
+PH_mode=1  FT_mod=6
+
+
+PROCNO=995
+
+Linear optimization of o1p in 5 steps, as Step: Group 0
+starting at 4.600000000   endval= 4.800000000  
+OPTIMUM= POSMAX
+VARMOD= LIN

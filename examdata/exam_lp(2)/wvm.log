@@ -1,0 +1,24 @@
+
+WaveMaker (rev 3.5 PL8) log file: Sat Jul  9 14:37:05 2022
+ 
+userA1: sp1:wvm: rvega4(0.5kHz)
+Pulprog: /opt/topspin3.2/exp/stan/nmr/lists/pp/zgesgp 
+
+wvm WARNING: failed to get probe data (3); WaveMaker powercheck inactive.
+Opening: /nmrdata/data/opetrov/nmr/gel-MOD-70 F3A/44/wvm.par
+
+sp1(p12): 
+ spnam1: zgesgp_sp1.wv (1000 steps, stepsize 1.2000 us, phi(max) = 0.00 deg)
+ p12: 1.2000000 ms
+ spw1: 0.4150056 W (3.82 dB), B1max = 3354.6 Hz (ref: p90=9.80 us @ -13.80 dB)
+ B1rms = 1336.4 Hz, 0.0658698 W (11.81 dB)
+ SP saved in /opt/topspin3.2/exp/stan/nmr/lists/wave/user/zgesgp_sp1.wv 
+
+Experiment Setup:
+
+ p12 = 1200.0000 us 
+ spnam1 = zgesgp_sp1.wv 
+ spw1 = 0.415006 W (3354.56 Hz)
+
+Wavemaker auto-setup completed
+

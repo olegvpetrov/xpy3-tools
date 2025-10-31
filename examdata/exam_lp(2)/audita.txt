@@ -1,0 +1,56 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_lizard/7001/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2022-07-09 20:46:58.254 +0200>,<opetrov>,<ntc1>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2022-07-09 20:28:24.005 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       39 6C CF 49 86 7E 86 29 81 89 9F 8F E8 87 2A 4D
+       data hash MD5: 8K
+       56 B7 AB BF 3F 03 1A 4D EF 84 44 78 75 67 12 CF>)
+(   2,<2025-10-06 21:00:30.376 +0200>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <convdta from       44 "python_lizard" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 8040
+       39 8F 14 67 72 18 6E 6D 0C A4 8D DE A1 12 1D D0>)
+(   3,<2025-10-06 21:19:27.033 +0200>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1000 "python_lizard" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 8040
+       39 8F 14 67 72 18 6E 6D 0C A4 8D DE A1 12 1D D0>)
+(   4,<2025-10-06 21:22:37.400 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 2010>)
+(   5,<2025-10-06 21:22:58.991 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 502>)
+(   6,<2025-10-06 21:23:53.384 +0200>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1001 "python_lizard" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 8040
+       39 8F 14 67 72 18 6E 6D 0C A4 8D DE A1 12 1D D0>)
+(   7,<2025-10-06 21:24:20.081 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 2010>)
+(   8,<2025-10-06 21:26:26.743 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 4010>)
+(   9,<2025-10-06 21:37:10.422 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 6106>)
+(  10,<2025-10-06 21:41:17.779 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 8154>)
+(  11,<2025-10-06 21:43:52.032 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 7130>)
+(  12,<2025-10-06 21:55:00.081 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 6618>)
+(  13,<2025-10-07 10:10:52.662 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 2010>)
+(  14,<2025-10-07 10:11:17.835 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 4058>)
+(  15,<2025-10-07 10:12:52.453 +0200>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 TD to 2010>)
+(  16,<2025-10-30 21:58:58.367 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1000 "python_lizard" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 2010
+       7E 27 AD 16 02 F5 58 17 A2 39 71 C3 52 7B 43 F9>)
+##END=
+
+$$ hash MD5
+$$ 26 D9 8C 29 C1 1B 98 22 E2 41 B5 06 CF FC FC 9E
