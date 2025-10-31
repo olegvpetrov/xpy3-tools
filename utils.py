@@ -9,6 +9,7 @@ import brukerIO
 #import matplotlib.pyplot as plt
 #import matplotlib.gridspec as gridspec
 import numpy as np
+import scipy
 import re
 import os
 
@@ -23,7 +24,6 @@ from contourpy.util.mpl_renderer import MplRenderer
 from matplotlib import gridspec 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2Tk
 from pathlib import Path
-from scipy.interpolate import pchip_interpolate
 
 complex_types = [np.complex64, np.complex128]
 
@@ -350,7 +350,7 @@ class PCA:
             self.data-= self.mean
             
         # SVD            
-        self.U, self.d, self.Vt = np.linalg.svd( self.data, full_matrices=False )
+        self.U, self.d, self.Vt = scipy.linalg.svd( self.data, full_matrices=False, check_finite=False)
         
         self.eigen = self.d**2		# PC eigenvalues
         self.pcs = self.Vt		# PC vectors (columns of V)
@@ -413,8 +413,10 @@ class PCA:
                 
         :return: number of AMSE-optimal principal components
         '''  
-        m, n = self.data.shape
-        assert m <= n
+#        m, n = self.data.shape
+#        assert m <= n
+        n = max(self.data.shape)
+        m = min(self.data.shape)        
         beta = m / n
         
         if sigma is not None:
@@ -438,8 +440,10 @@ class PCA:
         
         :return: sigma
         ''' 
-        m, n = self.data.shape
-        assert m <= n
+#        m, n = self.data.shape
+#        assert m <= n
+        n = max(self.data.shape)
+        m = min(self.data.shape)        
         beta = m / n
 
         if high_precision:
@@ -447,7 +451,7 @@ class PCA:
             if not hasattr(self, '_noise_eigen'):
                 self._noise_eigen = self._marchenko_pastur_cdf()
  
-            mu = self._noise_eigen[m//2]	# M.-P. distribution median
+            mu = self._noise_eigen[m//2]	# M.-P. distribution's median
             sigma = np.median(self.d) / np.sqrt(n * mu)        
             
         else:
@@ -474,14 +478,17 @@ class PCA:
                             
         Returns:
         ----------
-        nrows eigenvalues corresponding to their cumulative probabilities on a linear grid [0, 1]
+        m eigenvalues corresponding to their cumulative probabilities on a linear grid [0, 1]
         
         '''
-        nrows, ncols = self.data.shape
-        assert nrows < ncols
+#        nrows, ncols = self.data.shape
+#        assert nrows < ncols
+        
+        n = max(self.data.shape)
+        m = min(self.data.shape)        
 
-        beta = nrows / ncols
-        k = np.arange(nrows)
+        beta = m / n
+        k = np.arange(m)
          
         # the smallest and largest eigenvalues of E
         a = (1 - np.sqrt(beta))**2
@@ -490,10 +497,10 @@ class PCA:
         # define cumulative M.-P. distribution function P(z)      
         P = lambda z: .5 / (np.pi * beta) * (2 * np.sqrt(a * b) * (np.arctan( np.sqrt(a * (b - z) / (b * (z - a))) ) - np.pi*.5) + (a + b)*.5 * (np.arctan((z - (a + b)*.5) / np.sqrt((b - z) * (z - a)) ) + np.pi*.5) + np.sqrt((b - z) * (z - a)))
     
-        # interpolate singular values on a grid with nrows steps
-        z = np.linspace(a, b, nrows)[1:-1]
-        _P = np.linspace(0, 1, nrows)
-        _z = pchip_interpolate(np.r_[0., P(z), 1.], np.r_[a, z, b], _P)
+        # interpolate singular values on a grid with m steps
+        z = np.linspace(a, b, m)[1:-1]
+        _P = np.linspace(0, 1, m)
+        _z = scipy.interpolate.pchip_interpolate(np.r_[0., P(z), 1.], np.r_[a, z, b], _P)
         
         return _z
         
