@@ -12,6 +12,7 @@ xpy3-tools do not modify in place raw data from fid, ser, acqu, etc. files. If t
 * cpmg_relaxation : T2 relaxometry with mono- and stretched-exponential fit
 * denoise/denoise2 : noise removal in 1D/2D time-domain signals
 * icoshift : peak alignment over a series of spectra
+* lp : forward linear prediction on 1D data
 * phase_fid : zero-order phasing (rotation) of time-domain signals (1D only)
 * rotsync/rotsync_plus : reconstruction of rotor-syncronized MAS spectra from arbitrarily sampled fid's
 * sino_fid : signal-to-noise ratio calculator for time-domain signals (1D only)
