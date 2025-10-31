@@ -1,0 +1,93 @@
+# Tue Jun  2 18:50:30 2020
+#$$PROBEID=34
+#$$PROBEINFO=2.5 mm MAS BB/BB/1H H8974/0021
+#$$PICSINFO=H8974_0021_34.par
+#$$SHIMID=272623
+#
+# Active Shim Gradients
+#
+Z           		-43000          
+Z2          		0               
+Z3          		0               
+Z4          		0               
+Z5          		0               
+Z6          		0               
+X           		0               
+XZ          		0               
+XZ2         		0               
+XZ3         		0               
+XZ4         		0               
+Y           		0               
+YZ          		-90000          
+YZ2         		0               
+YZ3         		0               
+YZ4         		0               
+XY          		0               
+XYZ         		0               
+XYZ2        		0               
+XYZ3        		0               
+(X2-Y2)     		0               
+(X2-Y2)Z    		0               
+(X2-Y2)Z2   		0               
+(X2-Y2)Z3   		0               
+X3          		0               
+X3Z         		0               
+Y3          		0               
+Y3Z         		0               
+#
+# Lock Parameter
+#
+FIELD		-2222.435
+LOCKPHASE		343.900 
+LOCKPOWER		-20.000 
+LOCKGAIN		104.000 
+LOCKDC		0.000   
+LOCKSHIFT		4.700   
+LOOPGAIN		5.000   
+LOOPTIME		0.250   
+LOOPFILTER		500.000 
+#
+IEEE64_VERSION_CODE 1
+#
+# Shim currents 
+#
+SHIM_SETTING [1 ]  -10750.00000000 
+SHIM_SETTING [2 ]  0.00000000      
+SHIM_SETTING [3 ]  0.00000000      
+SHIM_SETTING [4 ]  1497.29200000   
+SHIM_SETTING [5 ]  -1497.13000000  
+SHIM_SETTING [6 ]  -330.18800000   
+SHIM_SETTING [7 ]  330.02500000    
+SHIM_SETTING [8 ]  25.41600000     
+SHIM_SETTING [9 ]  -26.05100000    
+SHIM_SETTING [10]  3487.28900000   
+SHIM_SETTING [11]  -3486.95700000  
+SHIM_SETTING [12]  0.00000000      
+SHIM_SETTING [13]  0.00000000      
+SHIM_SETTING [14]  0.00000000      
+SHIM_SETTING [15]  0.00000000      
+SHIM_SETTING [16]  0.00000000      
+SHIM_SETTING [17]  0.00000000      
+SHIM_SETTING [18]  0.00000000      
+SHIM_SETTING [19]  0.00000000      
+SHIM_SETTING [20]  0.00000000      
+SHIM_SETTING [21]  0.00000000      
+SHIM_SETTING [22]  0.00000000      
+SHIM_SETTING [23]  -0.00000000     
+SHIM_SETTING [24]  -0.00000000     
+SHIM_SETTING [25]  0.00000000      
+SHIM_SETTING [26]  0.00000000      
+SHIM_SETTING [27]  0.00000000      
+SHIM_SETTING [28]  -22500.00000000 
+SHIM_SETTING [29]  -0.00000000     
+SHIM_SETTING [30]  -0.00000000     
+SHIM_SETTING [31]  10777.16300000  
+SHIM_SETTING [32]  22500.00000000  
+SHIM_SETTING [33]  -0.00000000     
+SHIM_SETTING [34]  -0.00000000     
+SHIM_SETTING [35]  0.00000000      
+SHIM_SETTING [36]  0.00000000      
+SHIM_SETTING [37]  3985.60600000   
+SHIM_SETTING [38]  -3985.60600000  
+SHIM_SETTING [39]  -10777.16300000 
+SHIM_SETTING [40]  0.00000000      

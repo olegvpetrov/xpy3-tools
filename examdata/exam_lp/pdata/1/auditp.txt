@@ -1,0 +1,124 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_lizard/7771/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-06-02 18:50:30.333 +0200>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2020-06-02 18:50:08.775 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       2C 31 7D B9 A2 81 3E F9 8E 3B FA 92 B7 35 AC 22
+       data hash MD5: 512
+       56 17 8D 7D 56 46 55 D4 E7 50 02 F2 56 C4 8A 65>)
+(   2,<2020-06-02 18:50:32.005 +0200>,<opetrov>,<ntc2>,<proc1d>,<TOPSPIN 3.2>,
+      <Start of raw data processing
+       efp LB = 0 FT_mod = 6 PKNL = 1 PHC0 = -63.78521 PHC1 = -12 SI = 4K 
+       data hash MD5: 4K
+       84 7B 4D 83 1D AC 9B 98 F8 61 7D 5C 54 DD 37 AC>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/H6NO4P/1/pdata/1/auditp.txt
+(   3,<2025-10-28 16:20:57.794 +0100>,<opetrov>,<nt166>,<dataserver>,<TopSpin 4.2.0>,
+      <INTEGRAL DELETE [2.070;0.366]
+       data hash MD5: 4K
+       84 7B 4D 83 1D AC 9B 98 F8 61 7D 5C 54 DD 37 AC>)
+(   4,<2025-10-28 16:23:03.474 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1 "H6NO4P" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 4K
+       84 7B 4D 83 1D AC 9B 98 F8 61 7D 5C 54 DD 37 AC>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_lizard/1/pdata/1/auditp.txt
+(   5,<2025-10-28 16:56:22.343 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 ME_mod to LPfc>)
+(   6,<2025-10-28 16:56:29.112 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 LPBIN to 4096>)
+(   7,<2025-10-28 17:04:21.346 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 ME_mod to LPmifc>)
+(   8,<2025-10-28 17:26:54.893 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 ME_mod to LPfc>)
+(   9,<2025-10-28 17:27:07.117 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 NCOEF to 0>)
+(  10,<2025-10-28 17:48:00.643 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 WDW to EM>)
+(  11,<2025-10-28 17:48:02.955 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 LB to 20.00>)
+(  12,<2025-10-28 17:48:08.133 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 20 FT_mod = 6 PKNL = 1 PHC0 = -63.78521 PHC1 = -12 SI = 4K 
+       data hash MD5: 4K
+       FD D1 D6 52 1D 7F 6D A0 36 13 DB E7 E0 D3 CF 89>)
+(  13,<2025-10-28 17:49:05.642 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 WDW to no>)
+(  14,<2025-10-28 17:49:07.067 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 LB to 0>)
+(  15,<2025-10-28 17:49:12.580 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 0 FT_mod = 6 PKNL = 1 PHC0 = -63.78521 PHC1 = -12 SI = 4K 
+       data hash MD5: 4K
+       39 E6 13 F0 82 FA 60 1D C9 21 B9 62 AA C7 B9 A2>)
+(  16,<2025-10-28 17:49:58.138 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 SI to 8192>)
+(  17,<2025-10-28 17:50:02.244 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       efp LB = 0 FT_mod = 6 PKNL = 1 PHC0 = -63.78521 PHC1 = -12 SI = 8K 
+       data hash MD5: 8K
+       46 5E F9 72 28 9E E1 54 70 94 D6 D2 CA 0E 6E 14>)
+(  18,<2025-10-30 16:00:40.218 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1 "python_lizard" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 8K
+       46 5E F9 72 28 9E E1 54 70 94 D6 D2 CA 0E 6E 14>)
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_lizard/7771/pdata/1/auditp.txt
+(  19,<2025-10-30 16:01:14.915 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 FT_mod to no>)
+(  20,<2025-10-30 16:01:17.427 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 ME_mod to no>)
+(  21,<2025-10-30 16:01:33.508 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 SI to 512>)
+(  22,<2025-10-30 16:01:44.949 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       trf PH_mod = 1 PHC0 = -63.78521 PHC1 = -12 SI = 512 
+       data hash MD5: 512
+       1C B2 39 A2 C6 86 82 32 CF CC C2 22 17 E8 82 12>)
+(  23,<2025-10-30 16:01:57.075 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 SI to 256>)
+(  24,<2025-10-30 16:02:03.260 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       trf PH_mod = 1 PHC0 = -63.78521 PHC1 = -12 SI = 256 
+       data hash MD5: 256
+       35 7E 47 DF 2E CA DE 8E 97 68 E0 73 2F E7 51 A5>)
+(  25,<2025-10-30 16:02:44.818 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <pk fgphup PHC0 = 127.7594 PHC1 = 0 
+       data hash MD5: 256
+       03 F6 6C 44 1B 09 96 55 62 83 AC 1F BF E2 3E 9A>)
+(  26,<2025-10-30 16:03:53.188 +0100>,<opetrov>,<nt166>,<audit>,<TopSpin 4.2.0>,
+      <user comment:
+       TITLE=31P /  rCW-ApA / 20 kHz MAS
+       Sample: H6NO4PTITLE_END
+       data hash MD5: 256
+       03 F6 6C 44 1B 09 96 55 62 83 AC 1F BF E2 3E 9A>)
+(  27,<2025-10-30 16:11:11.555 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 SI to 8192>)
+(  28,<2025-10-30 16:11:18.970 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 FT_mod to fqc>)
+(  29,<2025-10-30 16:11:22.357 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <efp LB = 0 FT_mod = 6 PKNL = 1 SI = 8K PHC0 = 63.97419 PHC1 = -12 
+       data hash MD5: 8K
+       83 3F 99 B6 43 B4 DC E1 7B C2 38 C2 9C 00 43 0B>)
+(  30,<2025-10-30 16:11:48.851 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <pk fgphup PHC0 = -65.35 PHC1 = 0 
+       data hash MD5: 8K
+       AC 68 57 30 47 6E C2 75 34 9E 5D 86 43 73 A4 15>)
+(  31,<2025-10-30 21:47:48.878 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 FT_mod to no>)
+(  32,<2025-10-30 21:47:56.838 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 SI to 512>)
+(  33,<2025-10-30 21:48:01.952 +0100>,<opetrov>,<nt166>,<proc1d>,<TopSpin 4.2.0>,
+      <Start of raw data processing
+       trf PH_mod = 1 PHC0 = -1.375809 PHC1 = -12 SI = 512 
+       data hash MD5: 512
+       83 68 6E DE 19 A0 F5 83 E1 31 1E 96 26 0A B9 96>)
+(  34,<2025-10-30 21:48:12.462 +0100>,<opetrov>,<nt166>,<cprserver>,<TopSpin 4.2.0>,
+      <changed parameter F1 SI to 512>)
+##END=
+
+$$ hash MD5
+$$ 7B 59 48 B4 A6 90 CF 6A 2D A1 14 74 64 EE 2D 45

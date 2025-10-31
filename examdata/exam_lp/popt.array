@@ -1,0 +1,15 @@
+# Each line is for 1 parameter. 
+# The options of each  parameter must be separated by # space or tab characters.
+# Lines beginning with the string 'global' are valid for all parameters.
+global serfile 0
+global aunm 0
+global enable_absf 1
+global overwrite 1
+global mash 0
+global no 0
+global noDisplayRunningTime 0
+global noStoreOptimum 0
+global correlate2DExp 0
+Off:	0	o2	POSMAX	-4000	4000.0	9	LIN	1000.0	
+Off:	0	plw1	POSMAX	10.	55.0	10	LIN	5.0	
+Step:	0	p15	POSMAX	1000	3000.0	5	LIN	500.0	

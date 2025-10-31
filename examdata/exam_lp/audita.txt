@@ -1,0 +1,26 @@
+##TITLE= Audit trail, TopSpin 4.2.0
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_lizard/7771/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2020-06-02 18:50:30.333 +0200>,<opetrov>,<ntc2>,<go>,<TOPSPIN 3.2>,
+      <created by zg
+	started at 2020-06-02 18:50:08.775 +0200,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       2C 31 7D B9 A2 81 3E F9 8E 3B FA 92 B7 35 AC 22
+       data hash MD5: 512
+       56 17 8D 7D 56 46 55 D4 E7 50 02 F2 56 C4 8A 65>)
+(   2,<2025-10-28 16:23:03.458 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1 "H6NO4P" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 512
+       56 17 8D 7D 56 46 55 D4 E7 50 02 F2 56 C4 8A 65>)
+(   3,<2025-10-30 16:00:40.201 +0100>,<opetrov>,<nt166>,<dirdata>,<TopSpin 4.2.0>,
+      <wrpa from 1 1 "python_lizard" "/media/opetrov/LaCie/DATA/CUNI/ntc2"
+       data hash MD5: 512
+       56 17 8D 7D 56 46 55 D4 E7 50 02 F2 56 C4 8A 65>)
+##END=
+
+$$ hash MD5
+$$ 16 48 E2 5A 04 12 B1 69 E6 0E 19 C8 38 A2 A5 F3

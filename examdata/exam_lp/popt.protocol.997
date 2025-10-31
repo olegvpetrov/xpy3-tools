@@ -1,0 +1,16 @@
+
+Report of AU program poptau
+# Start time: 2020-05-05 15:30:51.973 +0200
+
+F1P=46.309ppm F2P=40.429ppm
+PH_mode=1  FT_mod=6
+
+
+PROCNO=997
+
+Linear optimization of o2 in 7 steps, as Step: Group 0
+starting at 1000.000000000 endval= 4000.000000000
+OPTIMUM= POSMAX
+VARMOD= LIN
+
+poptaustop was executed for o2, step 7

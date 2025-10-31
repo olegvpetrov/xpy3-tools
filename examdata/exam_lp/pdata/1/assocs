@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 4.2.0
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= opetrov
+$$ 2025-10-30 16:00:40.214 +0100  opetrov@nt166
+$$ /media/opetrov/LaCie/DATA/CUNI/ntc2/python_lizard/7771/pdata/1/assocs
+$$ process /opt/topspin4.2.0/prog/mod/dirdata
+##$MULTDISP= </nmrdata/data/opetrov/nmr/CP_glycine/55/pdata/1|/nmrdata/data/opetrov/nmr/CP_glycine/44/pdata/1|/nmrdata/data/opetrov/nmr/CP_glycine/56/pdata/1>
+##END=
