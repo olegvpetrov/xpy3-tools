@@ -1,13 +1,14 @@
-xpy3-tools is a collection of Python scripts for NMR data processing, designed to be suitable for use with Bruker's Topspin. As such, they rely on the Bruker Python API introduced in Topspin 4.1.3. The scripts primarily target the author's own practice, but hopefully might be of interest to other NMR practitioners. The present version (v1.6) of xpy3-tools comprises 15 scripts, which number is meant to be extended in future versions.
+xpy3-tools is a collection of Python scripts for NMR data processing, designed to be suitable for use with Bruker's Topspin. As such, they rely on the Bruker Python API introduced in Topspin 4.1.3. The scripts primarily target the author's own practice, but hopefully might be of interest to other NMR practitioners. The present version (v1.7) of xpy3-tools comprises 17 scripts, which number is going to be extended. Usage examples can be found in doc/tutorial_v1.7.pdf. 
 
-Since Topspin 4.2, the scripts can be run directly from Topspin's command line as xpy3 script_name. In this respect, they are similar to conventional Jython scripts and Bruker AU programs. However, they can be run as usual Python programs from console or launched from a dedicated IDE such as Spyder or VSCode, provided that the relevant dataset is open in Topspin and the embedded web service is running. For detailed description of Topspin Python interface see 
+Since Topspin 4.2, the scripts can be run directly from Topspin's command line by typing xpy3 script_name. In this respect, they are similar to Jython scripts from Topspin's  standard library. They can be run as regular Python programs from console or be launched from a dedicated IDE such as Spyder or VSCode, provided that the relevant NMR dataset is open in Topspin and the embedded web service is running. For detailed description of Topspin Python interface see 
 https://www.bruker.com/en/products-and-solutions/mr/nmr-software/topspin/topspin-python-interface.html. 
 
 ## List of scripts: 
-* baseline/baseline2 : baseline correction for a single spectrum or a series of spectra
-* cpmg_fp : whole-echo processing for CPMG signal readouts
-* cpmg_recursive : T2 relaxometry with mono-exponential recursive model
-* cpmg_relaxation : T2 relaxometry with mono- and stretched-exponential fit
+* baseline/baseline2 : baseline correction of a single spectrum or a series of spectra
+* baseplane : baseline correction of a 2D spectrum, applied to both dimensions
+* cpmg_fp : whole-echo processing for a CPMG type signal readout
+* cpmg_recursive : T2-relaxation fit using mono-exponential recursive model
+* cpmg_relaxation : T2-relaxation fit using mono- and stretched-exponential models
 * denoise/denoise2 : noise removal in 1D/2D time-domain signals
 * icoshift : peak alignment over a series of spectra
 * lp : forward linear prediction on 1D data
@@ -15,7 +16,8 @@ https://www.bruker.com/en/products-and-solutions/mr/nmr-software/topspin/topspin
 * rotsync/rotsync_plus : reconstruction of rotor-syncronized MAS spectra from arbitrarily sampled fid's
 * sino_fid : signal-to-noise ratio calculator for time-domain signals (1D only)
 * symmetrize : symmetrization of spinning sidebands in a MAS spectrum of half-integer nuclei
-* t1t2 : basic relaxation analysis on arrayed spectra from pseudo-2D data sets 
+* t1denoise : removal of t1-noise in 2D spectra
+* t1t2 : basic relaxation analysis on a series of spectra in pseudo-2D datasets 
 * utils : contains common utility functions and classes
 
 ## Installation
